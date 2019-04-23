@@ -1,0 +1,839 @@
+---
+# UCD thesis fields
+title: "The effect of forest structure on yellow pine/mixed-conifer resilience to wildfire and bark beetle disturbance in the Sierra Nevada, California"
+author: "Michael J. Koontz"
+year: "2019"
+month: "April"
+program: "ECOLOGY"
+uccampus: "DAVIS"
+report: "DISSERTATION"
+degree: "DOCTOR OF PHILOSOPHY"
+chair: "Andrew M. Latimer"
+signature1: "Malcolm P. North"
+signature2: "Constance I. Millar"
+abstract: |
+  The long-term persistence of forest ecosystems hinges on their resilience to ongoing disturbance. Resilience-- the ability for a system to absorb disturbances and retain its essential identity and functions-- is closely tied to forest structure-- the size, species, and spatial distribution of trees on the landscape. Past and future disturbances are linked through their feedbacks with forest structure. I explore this link by measuring disturbance severity as well as local-scale forest structure at broad spatial extents in the yellow pine/mixed-conifer forest system of the Sierra Nevada, California. I bring new tools, such as massively parallel cloud-based GIS and drone remote sensing, to bear on questions about how forest structure affects wildfire and bark beetle disturbance in this region. 
+  I introduce a new framework to describe how wildfire suppression biases burning conditions and thus observed fire effects in large fire events to be more extreme than would be expected if all ignitions were allowed to burn. With this selection bias of large fires in mind, I generate a new dataset of fire effects in the Sierra yellow pine/mixed-conifer system that captures outcomes from smaller fire events. I use this new fire effects dataset and also measure variability in horizontal forest structure using the computer vision approach of texture analysis for nearly 1000 fires that burned in the system between 1984 and 2017. I find that greater variability in forest structure reduces the probability of high severity wildfire, which increases forest resilience in this system ill-adapted to recover from large high-severity events. Finally, I use drone-captured imagery and structure from motion (SfM) techniques to recreate complex forest structure of over 9 km^2^ of western pine beetle-attacked forest along a 350 km latitudinal gradient and a 1000 m elevation gradient. I found that availability of the host tree for the western pine beetle, ponderosa pine, increases the probability of ponderosa pine mortality and average host size plays a different role depending on the climatic water deficit (a proxy for tree moisture stress) at each site: at cool wet sites, more small hosts drive mortality; at hot dry sites, more large hosts drive mortality. 
+  Overall, this work demonstrates how an understanding the complexities of local forest structure, including the size, species, and spatial distribution of trees, can generate new insights into how broader-scale patterns of tree mortality arise during wildfire and bark beetle disturbance.
+  
+
+  
+acknowledgments: |
+  I want to start by acknowledging that all of this work took place on unceded territory of a number of Native American peoples including the Patwin, Ute, Nisenan, Washoe, Mono, Miwok, and Paiute. Their ongoing history is intimately tied to forest disturbances in the Sierra Nevada yellow pine/mixed-conifer and greatly contributes to what is considered the 'natural range of variation' for this system. Changes in disturbance regimes since Euroamerican invasion must therefore be considered within the context of settler colonialism, which dramatically shifted the Native American influence on these disturbance-prone landscapes. I am grateful for the opportunity to live and do science in these areas.
+  
+  I am very grateful for the many people that supported me during my Ph.D. There's a lot of overlap in the various ways that people have contributed to my experience in the Graduate Group in Ecology (GGE), which speaks to the diversity of talent represented by my colleagues.
+  
+  The best thing I did during my PhD was to join a pair of exceptional labs. The collegiality and immense talent of the Latimer and North labs kept me excited to pursue awesome science. I'm grateful to the Latimer Lab members with whom I overlapped: Jens Stevens, Derek Young, Brian Smithers, Allie Weill, Marina LaForgia, and Paige Kouba. I'm also grateful to the North Lab members with whom I overlapped: Mason Earles, Brian Smithers, Gabina Bohlmann, Jens Stevens, Jan Ng, Max Odland, and Paige Kouba. 
+  
+  Thank you to the administrative staff that helped me keep track of all the logistics associated with completing a PhD: Holly Hatfield Rogai, Elizabeth Sturdy, Matt Malepeai, and Lisa Brown. I don't know how I would have kept up with the various deadlines, paperwork, funding sources, etc. without your help.
+  
+  I acknowledge salary funding from the NSF GRFP, the Graduate Group in Ecology, and the Department of Plant Sciences. I also acknowledge the US Forest Service Western Wildlands Environmental Threat Assessment Center, who funded the drone research.
+  
+  Thanks to Leif Mortenson for taking me on my first tour of western pine beetle attacked forests as well as Chris Fettig for guiding my thinking on how this disturbance affects Sierra Nevada forests. Thanks to Brandon Collins for early conversations about yellow pine/mixed-conifer fire regimes and measuring forest structural heterogeneity.
+  
+  Thanks to the GLORIA Great Basin nonprofit for an amazing time in the mountains collecting important baseline data about alpine plant distributions. This is a long-term monitoring project and I hope to be volunteering with you all for the next 100 years. 
+  
+  Thanks to Dan Krofcheck, Alex Mandel, and Taylor Nelson for letting me bounce ideas off of you while I was building the drone project.
+  
+  Thanks to all the people that are coauthors on manuscripts I led during my PhD: Chhaya Werner, Steve Fick, Zack Steel, Leif Mortenson, Chis Fettig, Ruth Hufbauer, Brett Melbourne, Meagan Oldfather, Malcolm North, and Andrew Latimer.
+  
+  I learned a ton about teaching during my time at UC Davis in large part due to my participation with The Carpentries and the R-DAVIS class. I want to thank a series of folks that helped guide my learning about modern pedagogical approaches to teaching scientific computing skills including Noam Ross, Michael Levy, Myfanwy Johnston, Greg Wilson, Tracy Teal, Titus Brown, Emilio Laca, Ryan Peek, Taylor Reiter, Martha Wohlfeil, Michael Culshaw-Maurer, and Andrew Latimer. A special shoutout to Titus Brown for letting me co-run an R bootcamp during the Data Intensive Biology Summer Institute and Ryan Peek for inviting me to go all-in with him on building a scientific computing course in the GGE based on a shared motivation to lower the barrier to entry for using computers to help folks do ecology.
+  
+  Working with the Diversity Committee has been one of the greatest honors of my time in the GGE. Thank you to all of the amazing people on this committee that work hard to enact meaningful change that makes our ecology community more welcoming, inclusive, and equitable. 
+  
+  Thank you to my Guidance Committee and Qualifying Exam Committee members Rick Karban, Mark Schwartz, Connie Millar, Jenny Gremer, Robert Hijmans, and Sebastian Schreiber for helping to steer me on a good path from the get go.
+  
+  I am incredibly grateful to my advisors Andrew Latimer, Malcolm North, and Connie Millar for granting me the confidence, safety net, and flexibility to try new ideas with very uncertain outcomes to see where they may lead. I think my dissertation benefitted greatly from my feeling that I could take a "high risk/high reward" approach to pursuing science; I felt comfortable operating on steep learning curves because I knew I had good spotters.
+  
+  I thank my dog, Ouzel, for being a Very Good Pupper during my fieldwork and sometimes, but not always, alerting me when bears arrived in camp while we slept.
+  
+  Finally, I want to thank Meagan Oldfather for being a great visual observer for drone operations, an excellent fieldwork companion, and for making me want to be a better ecologist and person every day.
+  
+dedication: |
+  To my mom and dad.
+# End of UCD thesis fields
+knit: "bookdown::render_book"
+site: bookdown::bookdown_site
+output: 
+  aggiedown::thesis_pdf: 
+    latex_engine: xelatex
+#  aggiedown::thesis_gitbook: default
+#  aggiedown::thesis_word: default
+#  aggiedown::thesis_epub: default
+bibliography: bib/dissertation.bib
+# Download your specific bibliography database file and refer to it in the line above.
+csl: csl/ecology.csl
+# Download your specific csl file and refer to it in the line above.
+link-citations: yes
+linkcolor: blue
+urlcolor: blue
+citecolor: blue
+lot: true
+lof: true
+#space_between_paragraphs: true
+# Delete the # at the beginning of the previous line if you'd like
+# to have a blank new line between each paragraph
+#header-includes:
+#- \usepackage{tikz}
+---
+
+<!--
+Above is the YAML (YAML Ain't Markup Language) header that includes a lot of metadata used to produce the document.  Be careful with spacing in this header!
+
+If you'd like to include a comment that won't be produced in your resulting file enclose it in a block like this.
+-->
+
+<!--
+If you receive a duplicate label error after knitting, make sure to delete the index.Rmd file and then knit again.
+-->
+
+```{r include_packages, include = FALSE}
+# This chunk ensures that the aggiedown package is
+# installed and loaded. This aggiedown package includes
+# the template files for the thesis.
+if(!require(devtools))
+  install.packages("devtools", repos = "http://cran.rstudio.com")
+if(!require(aggiedown))
+  devtools::install_github("ryanpeek/aggiedown")
+library(aggiedown)
+```
+
+
+<!--chapter:end:index.Rmd-->
+
+---
+output:
+  pdf_document:
+  template: "ms_carpentry/mjk_ms_template.tex"
+  fig_caption: yes
+  # word_document:
+  #   fig_width: 8
+  #   fig_height: 7
+  # fig_caption: true
+  # df_print: kable
+  # reference_docx: "ms_carpentry/mjk_ms_template_word.docx"
+geometry: margin=1in
+header-includes: 
+- \usepackage{amsmath}
+- \usepackage{graphicx}
+- \usepackage{setspace}
+- \usepackage{mathtools}
+- \usepackage[left]{lineno}
+- \usepackage{booktabs}
+- \usepackage{longtable}
+- \usepackage{makecell}
+- \usepackage{caption}
+- \usepackage{textgreek}
+- \linenumbers
+- \renewcommand\abstractname{\vspace{-1em}}
+# - \captionsetup{width=15cm}
+
+bibliography: "ms_carpentry/remote-sensing-resistance.bib"
+csl: https://raw.githubusercontent.com/citation-style-language/styles/master/pnas.csl
+
+title: 'Local variability of vegetation structure increases forest resilience to wildfire'
+author:
+  - Michael J. Koontz^1,2^, Malcolm P. North^2,3^, Chhaya M. Werner^2,4^, Stephen E. Fick^5,6^, Andrew M. Latimer^2^
+
+date:
+  "^1^Graduate Group in Ecology, University of California; Davis, CA  \n
+  ^2^Department of Plant Sciences, University of California; Davis, CA  \n
+  ^3^Pacific Southwest Research Station, U.S.D.A. Forest Service; Davis, CA  \n
+  ^4^Center for Population Biology, University of California; Davis, CA  \n
+  ^5^U.S. Geological Survey, Southwest Biological Science Center  \n
+  ^6^Department of Ecology and Evolutionary Biology, University of Colorado; Boulder, CO"
+
+abstract: "*Abstract:* The long-term persistence of forest ecosystems hinges on their resilience to ongoing disturbance. Quantification of resilience in these valuable ecosystems remains difficult due to their vast extent and the longevity of forest species. Resilience to wildfire may arise from feedback between fire behavior and vegetation structure, which dictates fuel loading and continuity. Regular fire generates structural variability which may then enable forests to withstand future fires and retain their fundamental properties and functions-- a hallmark of a resilient system. A century of fire suppression in the western United States has homogenized the structure of many forests, potentially upsetting these feedbacks and compromising forest resilience. We investigate the generality and scale of the effect of structural variability on wildfire behavior in yellow pine/mixed-conifer forest of California's Sierra Nevada using cloud computing and texture analysis of a 33-year time series of satellite imagery. We measure wildfire response to forest structure for an unprecedented number and size range of wildfires, ensuring representation of both typical and extreme fire behavior, and find that greater structural variability is strongly associated with a lower probability of fire-induced overstory tree mortality. This resistance to wildfire was most apparent at the smallest spatial extent of forest structure tested (90m x 90m). Local-scale structural variability thus links past and future fire behavior, and makes forests more resilient to wildfire disturbance. Management strategies that increase vegetation structural variability, such as allowing fires to burn under moderate fuel and weather conditions, may therefore increase the probability of long-term forest persistence."
+
+---
+\doublespacing
+
+```{r setup, include=FALSE}
+library(here)
+library(readr)
+library(knitr)
+library(kableExtra)
+library(captioner)
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
+
+fig_nums <- captioner(prefix = "Fig. ")
+table_nums <- captioner(prefix = "Tab. ")
+eq_nums <- captioner(prefix = "Eq. ")
+```
+
+```{r get_references, results = "hide"}
+try(
+  download.file(
+    url = "https://dl.dropboxusercontent.com/s/2ha48iabtlr5jbo/remote-sensing-resistance.bib", 
+    destfile = here::here("manuscript/ms_carpentry/remote-sensing-resistance.bib"))
+)
+```
+
+```{r source_analyses, results = "hide"}
+cbi_models <- read_csv(here::here("data/data_output/cbi_calibration_model_comparison.csv"))
+
+source(here::here("analyses/cbi_summary-stats.R"))
+source(here::here("analyses/fire-perims_summary-stats.R"))
+source(here::here("analyses/probability-of-high-severity.R"))
+source(here::here("analyses/model-comparison.R"))
+source(here::here("analyses/prefire-ndvi-neighborhood-mean-ndvi-correlation.R"))
+
+# # This .rds file has the R object name `ss_burned`
+# ss_burned <- readRDS(here::here("data/data_output/burned-fire-samples_configured.rds"))
+print_cbi_models <- cbi_models
+print_cbi_models[, 5:13] <- round(cbi_models[, 5:13], 3)
+print_cbi_models <-
+  print_cbi_models %>%
+  arrange(desc(r2_kfold)) %>%
+  mutate(rank = 1:nrow(.)) %>%
+  dplyr::select(rank, response, time_window, interpolation, r2_kfold, a, b, c, low_sev, mod_sev, hi_sev)
+```
+
+# Significance
+A "resilient" forest endures disturbance and is likely to persist. Resilience to wildfire may derive from variability in vegetation structure, which interrupts fuel continuity and prevents fire from killing overstory trees. Testing the generality and scale of this phenomenon is challenging because forests are vast, long-lived ecosystems. We develop a novel cloud computing approach to consistently quantify forest structural variability and fire severity across >30 years and nearly 1,000 wildfires in California's Sierra Nevada. We find that greater small-scale structural variability increases resilience by reducing rates of fire-induced tree mortality. Resilience of these forests is likely compromised by structural homogenization from a century of fire suppression, but may be restored with management that increases structural variability of vegetation.
+
+# Introduction
+
+Biological systems comprising heterogeneous elements can retain their fundamental properties in the face of regular disturbance. This ability of a heterogeneous system to absorb disturbances, reorganize, and to persist within a domain of stability with respect to its identity, structure, function, and feedbacks is termed resilience [@Holling1973; @Walker2004]. Resilience has been demonstrated in complex biological systems characterized by a variety of different types of “heterogeneity” including genetic diversity [@Reusch2005; @Baskett2009; @Agashe2009], species diversity [@Tilman1994; @Chesson2000; @Cadotte2013], functional diversity [@Gazol2016], topoclimatic complexity [@Ackerly2010; @Lenoir2013], and temporal environmental variation [@Questad2008]. An emerging paradigm in forest ecology is that resilience to disturbances such as wildfire and insect outbreaks may arise from spatial variability in the structure of vegetation [@Stephens2008; @North2009; @Virah-Sawmy2009]. 
+
+In much of the western United States, forests are experiencing "unhealthy" conditions which compromise their resilience and leaves them prone to catastrophic shifts in ecosystem type [@Millar2015]. Warmer temperatures coupled with recurrent drought (i.e., "hotter droughts") exacerbate water stress on trees [@Williams2012; @Millar2015; @Clark2016] and a century of fire suppression has drastically increased forest density and structural homogeneity [@Stevens2017; @Safford2017]. Combined, these changes are liable to upset the feedbacks between forest structure and pattern-forming ecological disturbances that historically stabilized the system and made it resilient. In the yellow pine/mixed-conifer forests of California's Sierra Nevada mountain range, wildfires kill much larger contiguous patches of trees than in the several centuries prior to Euroamerican settlement making natural forest regeneration after these megafires uncertain [@Miller2007; @Stevens2017; @Safford2017; @Steel2018]. Forests are essential components of the biosphere with high management priority given their large carbon stores and other valued ecosystem services [@Hansen2013; @Crowther2015; @Millar2015; @Trumbore2015], making it critical to understand how and at what scale spatial structural variability affects forest resilience to disturbance. 
+
+Resilience of forest ecosystems is fundamentally challenging to quantify because forests comprise long-lived species, span large geographic extents, and are affected by disturbances at a broad range of spatial scales. The ease or difficulty with which a disturbance changes a system's state is termed resistance, and it is a key component of resilience [@Walker2004] (though some treatments in forest ecology define "resistance" as a distinct process from "resilience"; see @Millar2007). To assess a forest's resistance, the relevant state change to measure is the loss of its characteristic native biota-- overstory trees [@Keith2013]. Using this framework, a forest system that is resistant to wildfire should generally experience less overstory tree mortality when a fire occurs.
+
+Wildfire behavior is inherently complex and is influenced by local weather, topography, and fuel conditions created by a legacy of disturbances at any particular place [@Sugihara2006]. For instance, high surface fuel loads and presence of “ladder fuels” in the understory increase the probability of "crowning" fire behavior, which kills a high proportion of trees [@Agee2005; @Stephens2008]. A structurally variable forest can largely avoid overstory tree mortality because discontinuous fuel loads interrupt crown fire spread, reduced amounts of accumulated ladder fuel decreases the probability of crowning, and because small tree clumps with fewer trees don’t facilitate self-propagating fire behavior [@Graham2004; @Scholl2010]. In fire-prone forests with relatively intact fire regimes and high structural variability such as in the Jeffrey pine/mixed-conifer forests of the Sierra San Pedro Mártir in Baja, California, there tends to be reduced vegetation mortality after wildfires compared to fire-suppressed forests [@Stephens2008]. Thus, more structurally variable forests are predicted to persist due to their resistance to inevitable wildfire disturbance [@Graham2004; @Moritz2005; @Stephens2008]. However, it has been difficult to test this foundational concept at broad spatial extents, or resolve at what scale variability in forest structure is meaningful for resilience [@Kotliar1990]. 
+
+Wildfire severity typically describes the proportion of vegetation mortality resulting from fire, and can be measured by comparing pre- and postfire satellite imagery for a specific area. This usually requires considerable manual effort for image collation and processing, followed by calibration with field data [@Miller2007; @Miller2009a; @DeSantis2010; @Cansler2012; @Veraverbeke2013; @Parks2014; @Prichard2014; @Edwards2018; @Fernandez2018]. Efforts to measure severity across broad spatial extents, such as the Monitoring Trends in Burn Severity project [@Eidenshink2007], are motivated by and fulfill management needs in response to individual fires but are unsuitably subjective for characterizing patterns and trends across large numbers of wildfires [@Kolden2015]. Automated efforts to remotely assess wildfire have arisen, but they tend to focus on more aggregate measures of wildfire such as whether an area burned or the probability that it burned rather than the severity of the burn [@Bastarrika2011; @Goodwin2014; @Boschetti2015; @Hawbaker2017], but see [@Reilly2017; @Parks2018]. Here, we present a method to automate the measurement of wildfire severity using minimal user inputs: a geometry of interest (a wildfire perimeter or a field plot location) and an alarm date (the date the fire was discovered). This information is readily available in many fire-prone areas (such as California, via the Fire and Resource Assessment Program; http://frap.fire.ca.gov/projects/fire_data/fire_perimeters_index) or could be derived using existing products (such as the Landsat Burned Area Essential Climate Variable product described in @Hawbaker2017). 
+
+Vegetation characteristics can be measured using remotely-sensed imagery [@Rouse1973; @Asner2015; @Young2017]. Texture analysis of these vegetation characteristics can quantify ecologically relevant local environmental heterogeneity across broad spatial extents [@Wood2012; @Huang2014; @Stein2014; @Tuanmu2015], which may be used as a direct measure of ecosystem resilience [@Kefi2014]. Developed for image classification and computer vision, texture analysis characterizes each pixel in an image by a summary statistic of its neighboring pixels, and represents a measure of local heterogeneity which itself varies across the landscape [@Haralick1973]. Texture analysis of forested areas detects heterogeneity of overstory vegetation, which corresponds to fuel loading and continuity, capturing the primary influence of vegetation structure on fire behavior.
+
+We use freely-available Landsat satellite data and a new image processing approach to calculate wildfire severity for nearly 1,000 wildfires encompassing a wide size range (down to 4 hectares) and long time series (1984 to 2017) of Sierra Nevada wildfires that burned in yellow pine/mixed-conifer forest. The larger fires that comprise most severity databases are often able to grow large only after escaping initial suppression efforts and burning under extreme fuel and weather conditions [@Calkin2005]. We better represent non-extreme fire behavior by measuring severity across a wider range of fire sizes, allowing us to characterize general features of wildfire behavior in this system without bias. We calibrate 56 configurations of our algorithmic approach to ground-based wildfire severity measurements, and select the best performing severity metric to generate a comprehensive, system-wide severity dataset. We pair the resulting extensive database of wildfire severity measures with image texture analysis of vegetation to ask: (1) Does spatial variability in forest structure increase the resilience of California yellow pine/mixed-conifer forests by reducing the severity of wildfires? (2) At what scale does structural variability have the strongest association with wildfire severity? and (3) Does the influence of structural variability on fire severity depend on topography, regional climate, or other conditions?
+
+# Results
+
+We found that the remotely sensed relative burn ratio (RBR) metric of wildfire severity measured across a 48-day interval prior to the wildfire discovery date correlated best with ground-based composite burn index (CBI) measurements of severity (5-fold cross validation $R^2 =$ `r print_cbi_models$r2_kfold[1]`; `r fig_nums(name = "fig-cbi-calibration", display = "cite")`; Supp. Table 1). Our method to calculate remotely sensed severity using automated Landsat image fetching performs as well or better than most other reported methods that use hand-curation of Landsat imagery (see review in @Edwards2018). Further, several combinations of remotely sensed severity metrics, time windows, and interpolation methods validate well with the ground-based severity metrics, including those based on NDVI which is calculated using reflectance in shorter wavelengths than those typically used for measuring severity (`r fig_nums(name = "fig-cbi-calibration", display = "cite")`). The top three configurations of our remotely sensed severity metric are depicted in `r fig_nums(name = "fig-cbi-calibration", display = "cite")`.
+
+```{r, results = "hide"}
+fig_nums(name = "fig-cbi-calibration")
+```
+
+![Three top performing remotely-sensed severity metrics based on 5-fold cross validation (relative burn ratio, 48-day window, bicubic interpolation; relative delta normalized burn ratio, 32-day window, bilinear interpolation; and relative delta normalized difference vegetation index, 48-day window, bilinear interpolation) calculated using new automated image collation algorithms, calibrated to `r total_conifer_cbi_plots` field measures of fire severity (composite burn index). See Supplemental Table 1 for performance of all tested models.](../figures/remote-sensed-severity-calibration.pdf)
+
+```{r, results = "hide", eval = FALSE}
+table_nums(name = "table-cbi-models")
+```
+
+```{r cbi_models_table, results = "hide", eval = FALSE}
+knitr::kable(print_cbi_models,
+             # format = "latex",
+             longtable = TRUE,
+             booktabs = TRUE,
+             caption = "Comparison of models used to validate and calibrate remotely sensed wildfire severity with ground-based composite burn index (CBI) severity sorted in descending order by the $R^2$ value from a 5-fold cross validation. A total of 56 models were tested representing all possible combinations of 7 different measures of wildfire severity (RBR, dNBR, dNBR2, RdNBR, RdNBR2, dNDVI, and RdNDVI), 4 different time windows in which Landsat imagery was acquired and summarized with a median reducer on a pixel-by-pixel basis (16 days, 32 days, 48 days, and 64 days), and two different interpolation methods (bilinear and bicubic). The three parameters (\\textbeta\\textsubscript{0}, \\textbeta\\textsubscript{1}, and \\textbeta\\textsubscript{2}) from the nonlinear model fit described in Eq. \\ref{eq-cbi-calibration} are reported. For each model, the value of the remotely sensed wildfire severity measurement corresponding to the lower bounds of 3 commonly used categories of severity are reported ('low' corresponds to a CBI value of 0.1, 'mod' corresponds to a CBI value of 1.25, and 'high' corresponds to a CBI value of 2.25)",
+             caption.short = "Comparison of models used to validate and calibrate remotely sensed wildfire severity with CBI severity",
+             escape = FALSE,
+             col.names = c("Rank", "\\makecell[c]{Severity\\\\measure}", "\\makecell[c]{Time\\\\window}", "Interpolation", "\\makecell[c]{k-fold\\\\$R^2$}", "\\makecell[c]{\\textbeta\\textsubscript{0}}", "\\makecell[c]{\\textbeta\\textsubscript{1}}", "\\makecell[c]{\\textbeta\\textsubscript{2}}", "low", "mod", "high")) %>%
+  kable_styling(latex_options = c("repeat_header"))
+```
+
+```{r param_estimates_latex, eval = FALSE}
+knitr::kable(ci_betas_print_table,
+             # format = "latex",
+             caption = "Model parameter estimates for different neighborhood sizes.",
+             caption.short = "Model parameter estimates",
+             escape = FALSE,
+             col.names = c("Coefficient", "\\makecell[c]{90m x 90m\\\\neighborhood}", "\\makecell[c]{150m x 150m\\\\neighborhood}", "\\makecell[c]{210m x 210m\\\\neighborhood}", "\\makecell[c]{270m x 270m\\\\neighborhood}"))
+```
+
+```{r param_estimates_word, eval = FALSE}
+knitr::kable(ci_betas_print_table_simple,
+             # format = "latex",
+             caption = "Model parameter estimates for different neighborhood sizes.",
+             caption.short = "Model parameter estimates",
+             escape = FALSE,
+             col.names = c("Coefficient", "90m x 90m neighborhood", "150m x 150m neighborhood}", "210m x 210m neighborhood", "270m x 270m neighborhood"))
+```
+
+Based on these model comparisons, we used the relative burn ratio (RBR) calculated using a 48-day time window before the fire and bicubic interpolation as our metric of severity. We created the boolean response variable representing whether the sampled point burned at high-severity or not by determining whether the RBR exceeded `r print_cbi_models$hi_sev[1]`, the threshold for high-severity derived using the non-linear relationship in `r eq_nums(name = "eq-cbi-calibration", display = "cite")` (`r fig_nums(name = "fig-cbi-calibration", display = "cite")`). 
+
+## Neighborhood size effect
+
+```{r, results = "hide"}
+table_nums(name = "table-ic-table")
+```
+
+```{r ic_print_table}
+knitr::kable(ic_print_table,
+             # format = "latex",
+             caption = "Comparison of four models described in Eq. \\ref{eq-severity-model} using different neighborhood sizes for calculating forest structural variability (standard deviation of NDVI within the neighborhood), neighborhood mean NDVI, and topographic roughness. LOO is a measure of a model's predictive accuracy (with lower values corresponding to more accurate prediction) and is calculated as -2 times the expected log pointwise predictive density (elpd) for a new dataset [@Vehtari2016]. $\\Delta$LOO is the difference between a model's LOO and the lowest LOO in a set of models (i.e., the model with the best predictive accuracy). The Bayesian $R^2$ is a 'data-based estimate of the proportion of variance explained for new data' [@Gelman2018]. Note that Bayesian $R^2$ values are conditional on the model so shouldn't be compared across models, though they can be informative about a single model at a time.",
+             caption.short = "Comparison of models using different neighborhood size windows to assess scale at which heterogeneity effect manifests",
+             escape = FALSE,
+             col.names = c("\\makecell[c]{Model}", "\\makecell[c]{Neighborhood size for\\\\variability measure}", "\\makecell[c]{LOO\\\\(-2*elpd)}", "\\makecell[c]{\\textDelta LOO\\\\to best model}", "\\makecell[c]{SE of\\\\\\textDelta LOO}", "\\makecell[c]{LOO\\\\model weight (\\%)}", "\\makecell[c]{Bayesian\\\\$R^2$}"),
+             align = rep("c", times = 5))
+```
+
+The model with the best out-of-sample prediction accuracy assessed by leave-one-out cross validation was the model fit using the smallest neighborhood size for the variability of forest structure (standard deviation of neighborhood NDVI), the mean of neighborhood NDVI, and the terrain roughness (standard deviation of elevation) (`r table_nums(name = "table-ic-table", display = "cite")`). Model weighting based on the LOO score suggests 100% of the model weight belongs to the model using the smallest neighborhood size window.
+
+## Effects of prefire vegetation density, 100-hour fuel moisture, potential annual heat load, and topographic roughness on wildfire severity
+
+```{r, results = "hide"}
+fig_nums(name = "fig-main-effects")
+```
+
+![The main effects and 95% credible intervals of the covariates having the strongest relationships with the probability of high-severity fire. All depicted relationships derive from the model using the 90m x 90m neighborhood size window for neighborhood standard deviation of NDVI, neighborhood mean of NDVI, and topographic roughness, as this was the best performing model of the four neighborhood sizes tested. The effect sizes of these covariates were similar for each neighborhood size tested.](../figures/prob-hi-sev-main-effects-credible-intervals.pdf)
+
+We report the results from fitting the model described in `r eq_nums(name = "eq-severity-model", display = "cite")` using the smallest neighborhood size (90m x 90m) because this was the best performing model (see above) and because the size and magnitude of estimated coefficients were similar across neighborhood sizes (Supp. Table 2).
+
+We found that the strongest influence on the probability of a forested area burning at high-severity was the density of the vegetation, as measured by the prefire NDVI at that central pixel. A greater prefire NDVI led to a greater probability of high-severity fire ($\beta_{\text{prefire\_ndvi}}=$ `r round(ci_betas %>% filter(param == "b_preFire_ndvi" & radius == 1) %>% select(mean) %>% pull(), 3)`; 95% CI: [`r paste(as.character(round(ci_betas %>% filter(param == "b_preFire_ndvi" & radius == 1) %>% select(lwr, upr), 3)), collapse = ", ")`]); `r fig_nums(name = "fig-main-effects", display = "cite")`). There was a strong negative relationship between 100-hour fuel moisture and wildfire severity such that increasing 100-hour fuel moisture was associated with a reduction in the probability of a high-severity wildfire ($\beta_{\text{fm100}}=$ `r round(ci_betas %>% filter(param == "b_fm100" & radius == 1) %>% select(mean) %>% pull(), 3)`; 95% CI: [`r paste(as.character(round(ci_betas %>% filter(param == "b_fm100" & radius == 1) %>% select(lwr, upr), 3)), collapse = ", ")`]) (`r fig_nums(name = "fig-main-effects", display = "cite")`). Potential annual heat load, which integrates aspect, slope, and latitude, also had a strong positive relationship with the probability of a high-severity fire. Areas that were located on southwest facing sloped terrain at lower latitudes had the highest potential annual heat load, and they were more likely to burn at high-severity ($\beta_{\text{pahl}}=$ `r round(ci_betas %>% filter(param == "b_pahl" & radius == 1) %>% select(mean) %>% pull(), 3)`; 95% CI: [`r paste(as.character(round(ci_betas %>% filter(param == "b_pahl" & radius == 1) %>% select(lwr, upr), 3)), collapse = ", ")`]) `r fig_nums(name = "fig-main-effects", display = "cite")`). We found no effect of local topographic roughness on wildfire severity ($\beta_{\text{topographic\_roughness}}=$ `r round(ci_betas %>% filter(param == "b_topo_roughness" & radius == 1) %>% select(mean) %>% pull(), 3)`; 95% CI: [`r paste(as.character(round(ci_betas %>% filter(param == "b_topo_roughness" & radius == 1) %>% select(lwr, upr), 3)), collapse = ", ")`]). We found a negative effect of the prefire neighborhood mean NDVI on the probability of a pixel burning at high-severity ($\beta_{\text{nbhd\_mean\_NDVI}}=$ `r round(ci_betas %>% filter(param == "b_neighborhood_mean" & radius == 1) %>% select(mean) %>% pull(), 3)`; 95% CI: [`r paste(as.character(round(ci_betas %>% filter(param == "b_neighborhood_mean" & radius == 1) %>% select(lwr, upr), 3)), collapse = ", ")`]). This is in contrast to the positive effect of the prefire NDVI of the pixel itself. 
+
+There was also a strong negative interaction between the neighborhood mean NDVI and the prefire NDVI of the central pixel ($\beta_{\text{nbhd\_mean\_NDVI*prefire\_NDVI}}$ `r round(ci_betas %>% filter(param == "b_neighborhood_mean_ndvi.preFire_ndvi" & radius == 1) %>% select(mean) %>% pull(), 3)`; 95% CI: [`r paste(as.character(round(ci_betas %>% filter(param == "b_neighborhood_mean_ndvi.preFire_ndvi" & radius == 1) %>% select(lwr, upr), 3)), collapse = ", ")`]). 
+
+### Effect of variability of vegetation structure on wildfire severity
+
+We found strong evidence for a negative effect of variability of vegetation structure on the probability of a high-severity wildfire ($\beta_{\text{nbhd\_stdev\_NDVI}}=$ `r round(ci_betas %>% filter(param == "b_het" & radius == 1) %>% dplyr::select(mean) %>% pull(), 3)`; 95% CI: [`r paste(as.character(round(ci_betas %>% filter(param == "b_het" & radius == 1) %>% dplyr::select(lwr, upr), 3)), collapse = ", ")`]); `r fig_nums(name = "fig-main-effects", display = "cite")`). We also found significant interactions between variability of vegetation structure and prefire NDVI $\beta_{\text{nbhd\_stdev\_NDVI*prefire\_NDVI}}=$ `r round(ci_betas %>% filter(param == "b_het_ndvi.preFire_ndvi" & radius == 1) %>% dplyr::select(mean) %>% pull(), 3)`; 95% CI: [`r paste(as.character(round(ci_betas %>% filter(param == "b_het_ndvi.preFire_ndvi" & radius == 1) %>% dplyr::select(lwr, upr), 3)), collapse = ", ")`]) as well as between variability of vegetation structure and neighborhood mean NDVI ($\beta_{\text{nbhd\_stdev\_NDVI*nbhd\_mean\_NDVI}}=$ `r round(ci_betas %>% filter(param == "b_het_ndvi.neighborhood_mean_ndvi" & radius == 1) %>% dplyr::select(mean) %>% pull(), 3)`; 95% CI: [`r paste(as.character(round(ci_betas %>% filter(param == "b_het_ndvi.neighborhood_mean_ndvi" & radius == 1) %>% dplyr::select(lwr, upr), 3)), collapse = ", ")`]).
+
+# Discussion
+
+Broad-extent, fine-grain, spatially-explicit analyses of whole ecosystems are key to illuminating macroecological phenomena [@Heffernan2014]. We used a powerful, cloud-based geographic information system and data repository, Google Earth Engine, as a 'macroscope' [@Beck2012] to study feedbacks between vegetation structure and wildfire disturbance in yellow pine/mixed-conifer forests of California's Sierra Nevada mountain range. With this approach, we reveal and quantify general features of this forest system, and gain deeper insights into the mechanisms underlying its function.
+
+## Factors influencing the probability of high-severity wildfire
+
+We found that the strongest influence on the probability of high-severity wildfire was prefire NDVI. Greater NDVI corresponds to high canopy cover and vegetation density [@Rouse1973] which translate directly to live fuel loads in the forest canopy and can increase high severity fire [@Parks2018]. Critically, overstory canopy cover and density also correlate with surface fuel loads [@Lydersen2015; @Collins2016], which play a larger role in driving high severity fire compared to canopy fuel loads in these forests [@Stephens2012a]. Thus NDVI is likely a strong predictor of fire severity because it is correlated with both surface fuel loads and canopy live fuel density.
+
+We found a strong positive effect of potential annual heat load as well as a strong negative effect of 100-hour fuel moisture, results which corroborates similar studies [@Parks2018b]. Some work has shown that terrain ruggedness [@Holden2009], and particularly coarser-scale terrain ruggedness [@Dillon2011], is an important predictor of wildfire severity, but we found no effect using our measure of terrain ruggedness.
+
+Critically, we found a strong negative effect of forest structural variability on wildfire severity that was opposite in direction but similar in magnitude to the effect of potential annual heat load. Just as the positive effect of NDVI is likely driven by surface fuel loads, the negative effect of variability in NDVI (our measure of structural variability), is likely driven by discontinuity in surface fuel loads, which can reduce the probability of initiation and spread of tree-killing crown fires [@VanWagner1977; @Agee1996; @Graham2004; @Agee2005]. 
+
+## Feedback between forest structural variability and wildfire severity
+
+This system-wide inverse relationship between structural variability and wildfire severity closes a feedback that links past and future fire behavior via forest structure. Frequent, mixed-severity wildfire generates variable forest structure [@North2009; @Larson2012; @Malone2018], which in turn, as we demonstrate, dampens the severity of future fire. In contrast, exclusion of wildfire homogenizes forest structure and increases the probability that a fire, when it occurs, will produce large, contiguous patches of overstory mortality [@Stevens2017; @Steel2018]. The proportion and spatial configuration of fire severity in fire-prone forests are key determinants of their long-term persistence [@Stevens2017; @Steel2018]. Lower-severity fire or scattered patches of higher-severity fire reduce the risk of conversion to a non-forest vegetation type [@Stevens2017; @Walker2018], while prospects for forest regeneration are bleak when high-severity patch sizes are much larger than the natural range of variation for the system [@VanWagtendonk2006; @Coppoletta2016; @Stephens2013; @Millar2015; @Safford2017; @Stevens2017; @Miller2017]. Thus, the forest-structure-mediated feedback between past and future fire severity underlies the resilience of the Sierra Nevada yellow pine/mixed-conifer system. 
+
+## Neighborhood size
+
+We found that the effect of a forest patch's neighborhood characteristics on the probability of high-severity fire was strongest at the smallest neighborhood size that we tested, 90m x 90m. This suggests that the moderating effect of variability in vegetation structure on fire severity is a very local phenomenon. This corroborates work by @Safford2012, who found that crown fires (with high tree killing potential) were almost always reduced to surface fires (with low tree killing potential) within 70m of entering an fuel reduction treatment area.
+
+At a landscape level, forest treatments that reduce fuel loads and increase structural variability can be effective at reducing fire severity across broader spatial scales [@Stephens2013a]. This may reflect that severity patterns for a whole fire are an emergent property of very local interactions between forest structure and fire behavior. Some work suggests that the scale of these interactions may depend on even broader-scale effects of fire weather, with small-scale variability failing to influence fire behavior under extreme conditions [@Peters2004; @Lydersen2014], though we did not detect such an interaction. The notion of emergent patterns of severity arising from local effects of vegetation structure is supported by work on fuel reduction treatments, which suggests that fire behavior can be readily modified with forest structural changes to only 20% (when strategically located) to 60% (when randomly located) of the landscape [@Graham2004].
+
+## Correlation between covariates and interactions
+
+Unexpectedly, we found a strong interaction between the prefire NDVI at a pixel and its neighborhood mean NDVI. These two variables are strongly correlated ($\text{Spearman's }\rho=$ `r round(preFire_ndvi.neighborhood_mean_NDVI_correlation, 3)`), so the general effect of this interaction is to dampen the dominating effect of prefire NDVI. Thus, though the marginal effect of prefire NDVI on the probability of high-severity fire is still positive and large, its real-world effect might be more comparable to other modeled covariates when including the negative main effect of neighborhood mean NDVI, the negative interaction effect of prefire NDVI and neighborhood mean NDVI, and their tendency to covary (compare the real-world effect of vegetation density: $\beta_{\text{prefire\_ndvi}}+\beta_{\text{nbhd\_mean\_NDVI}}+\beta_{\text{nbhd\_mean\_NDVI*prefire\_NDVI}}=$ `r round(ci_betas %>% filter(param == "b_preFire_ndvi" & radius == 1) %>% dplyr::select(mean) %>% pull() + ci_betas %>% filter(param == "b_neighborhood_mean" & radius == 1) %>% dplyr::select(mean) %>% pull() + ci_betas %>% filter(param == "b_neighborhood_mean_ndvi.preFire_ndvi" & radius == 1) %>% dplyr::select(mean) %>% pull(), 3)`, to the effect of 100-hour fuel moisture, which becomes the effect with the greatest magnitude: $\beta_{\text{fm100}}=$ `r round(ci_betas %>% filter(param == "b_fm100" & radius == 1) %>% dplyr::select(mean) %>% pull(), 3)`).
+
+In the few cases when prefire NDVI and the neighborhood mean NDVI contrast, there is an overall effect of increasing the probability of high-severity fire. When prefire NDVI at the central pixel is high and the neighborhood NDVI is low (e.g., an isolated vegetation patch; Supplemental Fig. 2), the probability of high-severity fire is expected to dramatically increase. When prefire NDVI at the central pixel is low and the neighborhood NDVI is high (e.g., a hole in the center of an otherwise dense forest; Supplemental Fig. 2), the probability of high-severity fire at that central pixel is still expected to be fairly high even though there is limited vegetation density (see Supplemental Fig. 2). In these forest NDVI datasets, when these variables do decouple, they tend to do so in the "hole in the forest" case and lead to a greater probability of high-severity fire at the central pixel despite the lower vegetation density there. This can perhaps be explained if the consistently high vegetation density in a local neighborhood-- itself more likely to burn at high-severity-- exerts a contagious effect on the central pixel, raising its probability of burning at high-severity regardless of how much fuel might be there to burn. 
+
+## A new approach to remotely sensing wildfire severity
+
+We developed a new approach to calculating wildfire severity leveraging the cloud-based data catalog, the large parallel processing system, and the distribution of computation tasks in Google Earth Engine to enable rapid high-throughput analyses of earth observation data [@Gorelick2017]. Our programmatic assessment of wildfire severity across the `r frap_fire_count_ypmc` Sierra Nevada yellow pine/mixed-conifer fires in the FRAP perimeter database, which required fetching thousands of Landsat images and performing dozens of calculations across them, was automated and took less than an hour to complete. We found that the relative burn ratio (RBR) calculated using prefire Landsat images collected over a 48-day period prior to the fire and postfire Landsat images collected over a 48-day period one year after the prefire images validated the best with ground-based severity measurements (composite burn index; CBI). Further, we found that this method was robust to a wide range of severity metrics, time windows, and interpolation techniques.
+
+Most efforts to calculate severity from satellite data rely on hand curation of a single prefire and a single postfire image [@Miller2007; @Miller2009a; @DeSantis2010; @Cansler2012; @Veraverbeke2013; @Parks2014; @Prichard2014; @Edwards2018; @Fernandez2018]. Recently, @Parks2018 found that using a composite of several prefire images and several postfire images to detect fire impacts performed at least as well as using a single pre- and postfire image. Using composite images also facilitated automated image fetching. @Parks2018 used 3- to 4-month windows during pre-specified times of the year (depending on the fire's region) to collate pre- and postfire imagery one year before the fire and one year after. In contrast, we tested multiple time window lengths based on the fire start date regardless of when it burned during the year. Basing our pre- and postfire image fetching on fixed lengths of time since the fire start date standardized the amount of time elapsed in each severity assessment. Our best remotely sensed severity configuration used a much shorter time window compared to @Parks2018 (48 days versus 3 to 4 months), which likely balanced an incorporation of enough imagery to be representative of the pre- and postfire vegetation conditions but not so many images that different phenological conditions across the time window added noise to each composite. 
+
+Many algorithms have been developed to measure fire effects on vegetation in an attempt to better correspond to field data [@Key2006; @Miller2007; @Parks2014]. We found that several other remotely sensed measures of severity, including one based on NDVI that is rarely deployed, validated nearly as well with ground-based data as the best configuration (RBR calculated using a 48-day time window). We echo the conclusion of @Zhu2006 that the validation of differences between pre- and postfire NDVI to field measured severity data, which uses near infrared reflectance, is comparable to validation using more commonly used severity metrics (e.g., RdNBR and RBR) that rely on short wave infrared reflectance. One immediately operational implication of this is that the increasing availability of low-cost small unhumanned aerial systems (sUAS a.k.a. drones) and near-infrared-detecting imagers (e.g., those used for agriculture monitoring) may be used to reliably measure wildfire severity at very high spatial resolutions.
+
+## Conclusions 
+
+While the severity of a wildfire in any given place is controlled by many variables, we have presented strong evidence that, across large areas of forest, variable forest structure generally makes yellow pine/mixed-conifer forest in the Sierra Nevada more resistant to this inevitable disturbance. It has been well-documented that frequent, low-severity wildfire maintains forest structural variability. Here, we demonstrate a system-wide reciprocal effect suggesting that greater local-scale variability of vegetation structure makes fire-prone, dry forests more resilient to wildfire and may increase the probability of their long-term persistence.
+
+# Material and Methods
+
+## Study system
+
+```{r, results = "hide"}
+fig_nums(name = "fig-study-geographic-setting")
+```
+
+![Geographic setting of the study. A) Location of yellow pine/mixed-conifer forests as designated by the Fire Return Interval Departure (FRID) product which, among other things, describes the potential vegetation in an area based on the pre-Euroamerican settlement fire regime. B) Locations of all fires covering greater than 4 hectares that burned in yellow pine/mixed-conifer forest between 1984 and 2017 in the Sierra Nevada mountain range of California according to the State of California Fire Resource and Assessment Program database, the most comprehensive database of fire perimeters of its kind. Colors indicate how many fire perimeters overlapped a given pixel within the study time period. C) (red) Locations of `r total_conifer_cbi_plots` composite burn index (CBI) ground plots used to calibrate the remotely sensed measures of severity. (black) Locations of random samples drawn from `r frap_fire_count_ypmc` unique fires depicted in panel B that were in yellow pine/mixed-conifer forest as depicted in panel A, and which were designated as "burned" by exceeding a threshold relative burn ratio (RBR) determined by calibrating the algorithm presented in this study with ground-based CBI measurements.](../figures/study-geographic-setting.pdf)
+
+Our study assesses the effect of vegetation structure on wildfire severity in the Sierra Nevada mountain range of California in yellow pine/mixed-conifer forests (`r fig_nums(name = "fig-study-geographic-setting", display = "cite")`). This system is dominated by a mixture of conifer species including ponderosa pine (*Pinus ponderosa*), sugar pine (*Pinus lambertiana*), incense-cedar (*Calocedrus decurrens*), Douglas-fir (*Pseudotsuga menziesii*), white fir (*Abies concolor*), and red fir (*Abies magnifica*), angiosperm trees primarily including black oak (*Quercus kelloggii*), as well as shrubs [@Safford2017]. We considered "yellow pine/mixed-conifer forest" to be all areas designated as a yellow pine, dry mixed-conifer, or moist mixed-conifer pre-settlement fire regime (PFR) in the USFS Fire Return Interval Departure database (https://www.fs.usda.gov/detail/r5/landmanagement/gis/?cid=STELPRDB5327836), which reflects potential vegetation and is less sensitive to recent land cover change [@Steel2018]. We considered the Sierra Nevada region to be the area within the Sierra Nevada Foothills, the High Sierra Nevada, and the Tehachapi Mountain Area Jepson ecoregions [@Jepson2016]. 
+
+## A new approach to remotely sensing wildfire severity
+
+We measured forest vegetation characteristics and wildfire severity using imagery from the Landsat series of satellites [@Eidenshink2007; @Miller2007] with radiometric correction post-processing [@Masek2006; @Vermote2016; @USGSledaps2017; @USGSlasrc2017]. Landsat satellites image the entire Earth approximately every 16 days with a 30m pixel resolution. We used Google Earth Engine, a massively parallel cloud-based geographic information system and image hosting platform, for all image collation and processing [@Gorelick2017].
+
+We calculated wildfire severity for the most comprehensive digital record of fire perimeters in California: The California Department of Forestry and Fire Protection, Fire and Resource Assessment Program (FRAP) fire perimeter database (http://frap.fire.ca.gov/projects/fire_data/fire_perimeters_index). The FRAP database includes all known fires that covered more than 4 hectares, compared to the current standard severity database in this region which only includes fires covering greater than 80 hectares [@Miller2007; @Miller2012; @Miller2012a; @Steel2018].  Using the FRAP database of fire perimeters, we quantified fire severity within each perimeter of `r frap_fire_count_ypmc` wildfires in the Sierra Nevada yellow pine/mixed-conifer forest that burned between 1984 and 2017. Our approach more than doubles the number of fire events represented from `r r5_fire_count_ypmc` to `r frap_fire_count_ypmc`, though only increases the total burned area represented from `r formatC(r5_area_ypmc_burned, format = "e", digits = 2)` to `r formatC(frap_area_ypmc_burned, format = "e", digits = 2)` hectares because most of the additional fires are small. We use a consistent algorithmic approach to calculate fire severity across all fires, avoiding subjective judgements that some previous approaches have used to characterize severity separately for each fire.
+
+### Fetching and processing pre- and postfire imagery
+
+For each fire perimeter, we fetched a time series of prefire Landsat images starting the day before the fire alarm date and extending backward in time by a user-defined time window. An analogous postfire time series of Landsat imagery was fetched exactly one year after the date range used to filter the prefire collection. We tested 4 time windows: 16, 32, 48, or 64 days which were chosen to ensure that at least 1, 2, 3, or 4 Landsat images were captured by the date ranges (Supplemental Fig. 1). The Landsat archive we filtered included imagery from Landsat 4, 5, 7, and 8, so each pre- and postfire image collection may contain a mix of scenes from different satellite sources to enhance coverage. For each image in the pre- and postfire image collections, we masked pixels that were not clear (i.e., clouds, cloud shadows, snow, and water) using the CFMask algorithm [@Foga2017].
+
+For each Landsat image in the prefire and postfire collections, we calculated standard indices that capture vegetation cover and fire effects such as charring. Normalized difference vegetation index (NDVI) correlates with vegetation density, canopy cover, and leaf area index [@Rouse1973]. Normalized burn ratio (NBR) and normalized burn ratio version 2 (NBR2) respond strongly to fire effects on vegetation [@Lopez1991; @Key2006; @USGSlasrc2017; @USGSledaps2017; @Hawbaker2017] (Equations in Supplemental Methods).
+
+We composited each prefire image collection (including the pixel values representing NDVI, NBR, and NBR2) into a single prefire image and each postfire image collection into a single postfire image, by calculating the median of the unmasked values on a per-pixel basis across the stack of images in each pre- and postfire collection. Composite pre- and postfire images can be successfully used to measure wildfire severity instead of using raw, individual images [@Parks2018].
+
+We composited each pre- and postfire image collection (including the pixel values representing NDVI, NBR, and NBR2) into a single pre- and postfire image using a median reducer, which calculated the median of the unmasked values on a per-pixel basis across the stack of images in each collection. Composite pre- and postfire images can be successfully used to measure wildfire severity instead of using raw, individual images [@Parks2018].
+
+### Calculating wildfire severity
+
+Using the compositing approach, we calculated the most commonly used metrics of remotely-sensed wildfire severity to validate against ground-based data: the relative burn ratio (RBR) [@Parks2014], the delta normalized burn ratio (dNBR) [@Eidenshink2007; @Miller2007], the relative delta normalized burn ratio (RdNBR) [@Miller2007; @Miller2012a], the delta normalized burn ratio 2 (dNBR2) [@Hawbaker2017], the relative delta normalized burn ratio 2 (RdNBR2), and the delta normalized difference vegetation index (dNDVI) [@Eidenshink2007]. We also calculate a new, analogous metric to the RdNBR using NDVI-- the relative delta normalized difference vegetation index (RdNDVI). We calculated the delta severity indices (dNBR, dNBR2, dNDVI) without multiplying by a rescaling constant (e.g., we did not multiply the result by 1000 as in @Miller2007). Following @Reilly2017, we did not correct the delta indices using a phenological offset value, as our approach implicitly accounts for phenology by incorporating multiple cloud-free images across the same time window both before the fire and one year later. (Full equations can be found in the Supplemental Methods)
+
+Example algorithm outputs are shown in `r fig_nums(name = "fig-pre-post-rbr", display = "cite")`.
+
+![Example algorithm outputs for the Hamm Fire of 1987 (top half) and the American Fire of 2013 (bottom half) showing: prefire true color image (left third), postfire true color image (center third), relative burn ratio (RBR) calculation using a 48-day image collation window before the fire and one year later (right third). For visualization purposes, these algorithm outputs have been resampled to a resolution of 100m x 100m from their original resolution of 30m x 30m. Data used for analyses were sampled from the outputs at the original resolution.](../figures/pre-post-rbr.pdf)
+
+### Calibrating remotely-sensed wildfire severity with field-measured wildfire severity
+
+We calibrated our remotely-sensed measure of wildfire severity with `r total_conifer_cbi_plots` field measures of overstory tree mortality from two previously published studies [@Zhu2006; @Sikkink2013] (`r fig_nums(name = "fig-study-geographic-setting", display = "cite")`). The Composite Burn Index (CBI) is a metric of vegetation mortality across several vertical vegetation strata within a 30m diameter field plot [@Key2006]. The CBI ranges from 0 (no fire impacts) to 3 (very high fire impacts), and has a long history of use as a standard for calibrating remotely-sensed severity data [@Key2006; @Miller2007; @Miller2009a; @Cansler2012; @Parks2014; @Prichard2014; @Parks2018].  Following @Miller2007, @Miller2009a, @Parks2014, and @Parks2018, we fit a non-linear model to each remotely-sensed severity metric of the following form:
+
+```{r eq-cbi-calibration, results = "hide"}
+eq_nums(name = "eq-cbi-calibration")
+```
+
+(@eq-cbi-calibration) $\label{eq-cbi-calibration}
+\text{remote\_severity} = \beta_0 + \beta_1 e^{\beta_2 \text{cbi\_overstory}}$
+
+We fit the model in `r eq_nums(name = "eq-cbi-calibration", display = "cite")` for all 7 of our remotely-sensed severity metrics (RBR, dNBR, RdNBR, dNBR2, RdNBR2, dNDVI, RdNDVI) using 4 different time windows from which to collate satellite imagery (16, 32, 48, and 64 days). Following @Cansler2012, @Parks2014, and @Parks2018, we used bilinear interpolation to extract remotely-sensed severity at the locations of the CBI field plots to better align remote and field measurements. We also extracted remotely-sensed severity values using bicubic interpolation. In total, we fit 56 models (7 severity measures, 4 time windows, 2 interpolation methods) and performed five-fold cross validation using the `modelr` and `purrr` packages in R [@Wickham2017; @Henry2018; @RCoreTeam2018]. To compare goodness of model fits with @Miller2007, @Miller2009a, and @Parks2014, we report the average R^2^ value from the five folds for each of the 56 models. 
+
+## Remote sensing other conditions
+
+### Vegetation structural variability
+
+```{r, results = "hide"}
+fig_nums(name = "fig-heterogeneity-raster")
+```
+
+We used texture analysis to calculate a remotely-sensed measure of local forest variability [@Haralick1973; @Tuanmu2015]. Within a moving square neighborhood window with sides of 90m, 150m, 210m, and 270m, we calculated forest variability for each pixel as the standard deviation of the NDVI values of its neighbors (not including itself). NDVI correlates well with foliar biomass, leaf area index, and vegetation cover [@Rouse1973], so a higher standard deviation of NDVI within a given local neighborhood corresponds to discontinuous canopy cover and abrupt vegetation edges (see `r fig_nums(name = "fig-heterogeneity-raster", display = "cite")`) [@Franklin1986]. Canopy cover is positively correlated with surface fuel loads including dead and down wood, grasses, and short shrubs [@Lydersen2015; @Collins2016], which are primarily responsible for initiation and spread of "crowning" fire behavior which kills overstory trees [@Stephens2012a].
+
+![Example of homogenous forest (top row) and heterogenous forest (bottom row) with the same mean NDVI values (~0.6). Each column represents forest structural variability measured using a different neighborhood size. \label{fig-heterogeneity-raster}](../figures/heterogeneity-demo-raster.png)
+
+### Topographic conditions
+
+Elevation data were sourced from the Shuttle Radar Topography Mission [@Farr2007], a 1-arc second digital elevation model. Slope and aspect were extracted from the digital elevation model. Per-pixel topographic roughness was calculated as the standard deviation of elevation values within the same-sized kernels as those used for variability in forest structure  (90m, 150m, 210m, and 270m on a side and not including the central pixel).
+
+We used the digital elevation model to calculate the potential annual heat load at each pixel, which is an integrated measure of latitude, slope, and a folding transformation of aspect about the northeast-southwest line (@McCune2002 with correction in @McCune2007; See Supplemental Methods for equations)
+
+### Moisture conditions
+
+The modeled 100-hour fuel moisture data were sourced from the gridMET product, a gridded meteorological product with a daily temporal resolution and a 4km x 4km spatial resolution [@Abatzoglou2013a]. We calculated 100-hour fuel moisture as the median 100-hour fuel moisture for the 3 days prior to the fire. The 100-hour fuel moisture is a correlate of the regional temperature and moisture which integrates the relative humidity, the length of day, and the amount of precipitation in the previous 24 hours. Thus, this measure is sensitive to multiple hot dry days across the 4km x 4km spatial extent of each grid cell, but not to diurnal variation in relative humidity nor to extreme weather events during a fire.
+
+### Remote samples
+
+Approximately 100 random points were selected within each FRAP fire perimeter in areas designated as yellow pine/mixed-conifer forest and the values of wildfire severity as well as the values of each covariate were extracted at those points using nearest neighbor interpolation. Using the calibration equation described in `r eq_nums(name = "eq-cbi-calibration", display = "cite")` for the best configuration of the remote severity metric, we removed sampled points corresponding to "unburned" area prior to analysis (i.e., below an RBR threshold of `r print_cbi_models[1, "low_sev"] %>% pull()`). The random sampling amounted to `r total_conifer_samps` total samples across `r frap_fire_count_ypmc` fires.
+
+## Modeling the effect of forest variability on severity
+
+We used the Relative Burn Ratio (RBR) calculated using bicubic interpolation within a 48-day window to derive our response variable for analyses of forest structural variability, as it showed the best correspondence to field severity data measured as average R^2^ in the 5-fold cross validation. Using the non-linear relationship between RBR and CBI from the best performing calibration model, we calculated the threshold RBR corresponding to "high-severity" signifying complete or near-complete overstory mortality (RBR value of `r print_cbi_models[1, "hi_sev"] %>% pull()` corresponding to a CBI value of 2.25). If the severity at a remote sample point was greater than this threshold, the point was scored as a 1. We used a hierarchical logistic regression model (`r eq_nums(name = "eq-severity-model", display = "cite")`) to assess the probability of high-severity wildfire as a linear combination of the remote metrics described above: prefire NDVI of each pixel, standard deviation of NDVI within a neighborhood (i.e., forest structural variability), the mean NDVI within a neighborhood, 100-hour fuel moisture, potential annual heat load, and topographic roughness. We included two-way interactions between the structural variability measure and prefire NDVI, neighborhood mean NDVI, and 100-hour fuel moisture. We include the two-way interaction between a pixel's prefire NDVI and its neighborhood mean NDVI to account for structural variability that may arise from differences between these variables (see Supplemental Fig. 2). We scaled all predictor variables, used weakly-regularizing priors, and estimated an intercept for each individual fire with pooled variance.
+
+(@eq-severity-model)
+$\begin{aligned}
+\label{eq-severity-model}
+severity_{i, j} &\sim Bern(\phi_{i,j}) \\
+logit(\phi_{i,j}) &= 
+\begin{aligned}
+& \beta_0 + \\
+& \beta_{\text{nbhd\_stdev\_NDVI}} * \text{nbhd\_stdev\_NDVI}_i + \\
+& \beta_{\text{prefire\_NDVI}} * \text{prefire\_NDVI}_i + \\
+& \beta_{\text{nbhd\_mean\_NDVI}} * \text{nbhd\_mean\_NDVI}_i + \\
+& \beta_{\text{fm100}} * \text{fm100}_i + \\
+& \beta_{\text{pahl}} * \text{pahl}_i + \\
+& \beta_{\text{topographic\_roughness}} * \text{topographic\_roughness}_i + \\
+& \beta_{\text{nbhd\_stdev\_NDVI*fm100}} * \text{nbhd\_stdev\_NDVI}_i * \text{fm100}_i + \\
+& \beta_{\text{nbhd\_stdev\_NDVI*prefire\_NDVI}} * \text{nbhd\_stdev\_NDVI}_i * \text{prefire\_NDVI}_i + \\
+& \beta_{\text{nbhd\_stdev\_NDVI*nbhd\_mean\_NDVI}} * \text{nbhd\_stdev\_NDVI}_i * \text{nbhd\_mean\_NDVI}_i + \\
+& \beta_{\text{nbhd\_mean\_NDVI*prefire\_NDVI}} * \text{nbhd\_mean\_NDVI}_i * \text{prefire\_NDVI}_i + \\
+& \gamma_j
+\end{aligned}
+\\
+\gamma_j &\sim \mathcal{N}(0, \sigma_{\text{fire}})
+\end{aligned}$
+
+## Assessing the relevant scale of forest variability
+
+Each neighborhood size (90m, 150m, 210m, 270m on a side) was substituted in turn for the neighborhood standard deviation of NDVI, neighborhood mean NDVI, and terrain ruggedness covariates to generate a candidate set of 4 models. To assess the scale at which the forest structure variability effect manifests, we compared the 4 candidate models based on different neighborhood sizes using leave-one-out cross validation (LOO cross validation) [@Vehtari2016].  We inferred that the neighborhood size window used in the best-performing model reflected the scale at which the forest structure variability effect had the most support. 
+
+## Statistical software
+
+We used `R` for all statistical analyses [@RCoreTeam2018]. We used the `brms` package to fit mixed effects models in a Bayesian framework which implements the No U-Turn Sampler (NUTS) extension to the Hamiltonian Monte Carlo algorithm [@Hoffman2014; @Burkner2017]. We used 4 chains with 3000 samples per chain (1500 warmup samples and 1500 posterior samples) and chain convergence was assessed for each estimated parameter by ensuring Rhat values were less than or equal to 1.01 [@Burkner2017].
+
+## Data availability
+
+All data and analysis code are available via the Open Science Framework (DOI to be established) including a new dataset representing wildfire severity, vegetation characteristics, and regional climate conditions within the perimeters of 1,090 fires from the FRAP database that burned in yellow pine/mixed-conifer forest in the Sierra Nevada, California between 1984 and 2017. 
+
+# Acknowledgements
+
+We thank Connie Millar and Derek Young for valuable comments about this work and we also thank the community of Google Earth Engine developers for prompt and helpful insights about the platform. Funding was provided by NSF Graduate Research Fellowship Grant #DGE- 1321845 Amend. 3 (to MJK).
+
+# References
+
+
+<!--chapter:end:remote-sensing-resistance/manuscript/remote-sensing-resistance.Rmd-->
+
+# Mathematics and Science {#math-sci}
+
+<!-- This adds a different "short title" -->
+\chaptermark {Mathematics and Equations}
+
+<!-- Required to number equations in HTML files -->
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+});
+</script>
+
+## Math
+
+\TeX\ is the best way to typeset mathematics. Donald Knuth designed \TeX\ when he got frustrated at how long it was taking the typesetters to finish his book, which contained a lot of mathematics.  One nice feature of _R Markdown_ is its ability to read LaTeX code directly.
+
+If you are doing a thesis that will involve lots of math, you will want to read the following section which has been commented out. If you're not going to use math, skip over or delete this next commented section.
+
+
+<!-- MATH and PHYSICS majors: Uncomment the following section -->
+<!--
+$$\sum_{j=1}^n (\delta\theta_j)^2 \leq {{\beta_i^2}\over{\delta_i^2 + \rho_i^2}}
+\left[ 2\rho_i^2 + {\delta_i^2\beta_i^2\over{\delta_i^2 + \rho_i^2}} \right] \equiv \omega_i^2
+$$
+
+From Informational Dynamics, we have the following (Dave Braden):
+
+After _n_ such encounters the posterior density for $\theta$ is
+
+$$
+\pi(\theta|X_1< y_1,\dots,X_n<y_n) \varpropto \pi(\theta) \prod_{i=1}^n\int_{-\infty}^{y_i}
+   \exp\left(-{(x-\theta)^2\over{2\sigma^2}}\right)\ dx
+$$
+
+Another equation:
+
+$$\det\left|\,\begin{matrix}%
+c_0&c_1\hfill&c_2\hfill&\ldots&c_n\hfill\cr
+c_1&c_2\hfill&c_3\hfill&\ldots&c_{n+1}\hfill\cr
+c_2&c_3\hfill&c_4\hfill&\ldots&c_{n+2}\hfill\cr
+\,\vdots\hfill&\,\vdots\hfill&
+  \,\vdots\hfill&&\,\vdots\hfill\cr
+c_n&c_{n+1}\hfill&c_{n+2}\hfill&\ldots&c_{2n}\hfill\cr
+\end{matrix}\right|>0$$
+
+
+Lapidus and Pindar, Numerical Solution of Partial Differential Equations in Science and
+Engineering.  Page 54
+
+$$
+\int_t\left\{\sum_{j=1}^3 T_j \left({d\phi_j\over dt}+k\phi_j\right)-kT_e\right\}w_i(t)\ dt=0,
+   \qquad\quad i=1,2,3.
+$$
+
+L\&P  Galerkin method weighting functions.  Page 55
+
+$$
+\sum_{j=1}^3 T_j\int_0^1\left\{{d\phi_j\over dt} + k\phi_j\right\} \phi_i\ dt
+   = \int_{0}^1k\,T_e\phi_idt, \qquad i=1,2,3 $$
+
+Another L\&P (p145)
+
+$$
+\int_{-1}^1\!\int_{-1}^1\!\int_{-1}^1 f\big(\xi,\eta,\zeta\big)
+   = \sum_{k=1}^n\sum_{j=1}^n\sum_{i=1}^n w_i w_j w_k f\big( \xi,\eta,\zeta\big).
+$$
+
+Another L\&P (p126)
+
+$$
+\int_{A_e} (\,\cdot\,) dx dy = \int_{-1}^1\!\int_{-1}^1 (\,\cdot\,) \det[J] d\xi d\eta.
+$$
+-->
+
+## Chemistry 101: Symbols
+
+Chemical formulas will look best if they are not italicized. Get around math mode's automatic italicizing in LaTeX by using the argument `$\mathrm{formula here}$`, with your formula inside the curly brackets.  (Notice the use of the backticks here which enclose text that acts as code.)
+
+So, $\mathrm{Fe_2^{2+}Cr_2O_4}$ is written `$\mathrm{Fe_2^{2+}Cr_2O_4}$`.
+
+<!--
+The \noindent command below does what you'd expect:  it forces the current line/paragraph to not indent. This was done here to match the format of the LaTeX thesis PDF.
+-->
+
+\noindent Exponent or Superscript: $\mathrm{O^-}$
+
+\noindent Subscript: $\mathrm{CH_4}$
+
+To stack numbers or letters as in $\mathrm{Fe_2^{2+}}$, the subscript is defined first, and then the superscript is defined.
+
+\noindent Bullet: CuCl $\bullet$ $\mathrm{7H_{2}O}$
+
+
+\noindent Delta: $\Delta$
+
+\noindent Reaction Arrows: $\longrightarrow$ or  $\xrightarrow{solution}$
+
+\noindent Resonance Arrows: $\leftrightarrow$
+
+\noindent Reversible Reaction Arrows: $\rightleftharpoons$
+
+### Typesetting reactions
+
+You may wish to put your reaction in an equation environment, which means that LaTeX will place the reaction where it fits and will number the equations for you. 
+
+\begin{equation}
+  \mathrm{C_6H_{12}O_6  + 6O_2} \longrightarrow \mathrm{6CO_2 + 6H_2O}
+  (\#eq:reaction)
+\end{equation}
+
+We can reference this combustion of glucose reaction via Equation \@ref(eq:reaction).
+
+### Other examples of reactions
+
+$\mathrm{NH_4Cl_{(s)}}$ $\rightleftharpoons$ $\mathrm{NH_{3(g)}+HCl_{(g)}}$
+
+\noindent $\mathrm{MeCH_2Br + Mg}$ $\xrightarrow[below]{above}$ $\mathrm{MeCH_2\bullet Mg \bullet Br}$
+
+## Physics
+
+Many of the symbols you will need can be found on the math page <http://web.reed.edu/cis/help/latex/math.html> and the Comprehensive LaTeX Symbol Guide (<http://mirror.utexas.edu/ctan/info/symbols/comprehensive/symbols-letter.pdf>).
+
+## Biology
+
+You will probably find the resources at <http://www.lecb.ncifcrf.gov/~toms/latex.html> helpful, particularly the links to bsts for various journals. You may also be interested in TeXShade for nucleotide typesetting (<http://homepages.uni-tuebingen.de/beitz/txe.html>).  Be sure to read the proceeding chapter on graphics and tables.
+
+
+<!--chapter:end:02-chap2.Rmd-->
+
+```{r include_packages_2, include = FALSE}
+# This chunk ensures that the huskydown package is
+# installed and loaded. This huskydown package includes
+# the template files for the thesis and also two functions
+# used for labeling and referencing
+if(!require(devtools))
+  install.packages("devtools", repos = "http://cran.rstudio.com")
+if(!require(dplyr))
+    install.packages("dplyr", repos = "http://cran.rstudio.com")
+if(!require(ggplot2))
+    install.packages("ggplot2", repos = "http://cran.rstudio.com")
+if(!require(ggplot2))
+    install.packages("bookdown", repos = "http://cran.rstudio.com")
+if(!require(aggiedown)){
+  library(devtools)
+  devtools::install_github("rapeek/aggiedown")
+  }
+library(aggiedown)
+flights <- read.csv("data/flights.csv")
+```
+
+
+# Tables, Graphics, References, and Labels {#ref-labels}
+
+\chaptermark {Tables and Stuff}
+
+## Tables
+
+By far the easiest way to present tables in your thesis is to store the contents of the table in a CSV or Excel file, then read that file in to your R Markdown document as a data frame. Then you can style the table with the `kable` function, or functions in the [kableExtra](https://cran.r-project.org/web/packages/kableExtra/index.html) pacakge. 
+
+In addition to the tables that can be automatically generated from a data frame in **R** that you saw in [R Markdown Basics] using the `kable` function, you can also create tables using _pandoc_. (More information is available at <http://pandoc.org/README.html#tables>.)  This might be useful if you don't have values specifically stored in **R**, but you'd like to display them in table form.  Below is an example.  Pay careful attention to the alignment in the table and hyphens to create the rows and columns. Generally I don't recommend this approach of typing the table directly into your R Markdown document. 
+
+----------------------------------------------------------------------------------
+  Factors                    Correlation between Parents & Child      Inherited
+------------------------- ----------------------------------------- --------------
+  Education                                -0.49                         Yes
+  
+  Socio-Economic Status                     0.28                        Slight   
+  
+  Income                                    0.08                          No
+  
+  Family Size                               0.18                        Slight
+  
+  Occupational Prestige                     0.21                        Slight
+------------------------- ----------------------------------------- --------------
+Table: (\#tab:inher) Correlation of Inheritance Factors for Parents and Child 
+
+We can also create a link to the table by doing the following: Table \@ref(tab:inher).  If you go back to [Loading and exploring data] and look at the `kable` table, we can create a reference to this max delays table too: Table \@ref(tab:maxdelays). The addition of the `(\#tab:inher)` option to the end of the table caption allows us to then make a reference to Table `\@ref(tab:label)`. Note that this reference could appear anywhere throughout the document after the table has appeared.  
+
+<!-- We will next explore ways to create this label-ref link using figures. -->
+
+\clearpage
+
+<!-- clearpage ends the page, and also dumps out all floats.
+  Floats are things like tables and figures. -->
+
+
+## Figures
+
+If your thesis has a lot of figures, _R Markdown_ might behave better for you than that other word processor. One perk is that it will automatically number the figures accordingly in each chapter. You'll also be able to create a label for each figure, add a caption, and then reference the figure in a way similar to what we saw with tables earlier.  If you label your figures, you can move the figures around and _R Markdown_ will automatically adjust the numbering for you.  No need for you to remember!  So that you don't have to get too far into LaTeX to do this, a couple **R** functions have been created for you to assist.  You'll see their use below.
+
+<!--
+One thing that may be annoying is the way _R Markdown_ handles "floats" like tables and figures (it's really \LaTeX's fault). \LaTeX\ will try to find the best place to put your object based on the text around it and until you're really, truly done writing you should just leave it where it lies. There are some optional arguments specified in the options parameter of the `label` function.  If you need to shift your figure around, it might be good to look here on tweaking the options argument:  <https://en.wikibooks.org/wiki/LaTeX/Floats,_Figures_and_Captions>
+
+If you need a graphic or tabular material to be part of the text, you can just put it inline. If you need it to appear in the list of figures or tables, it should be placed in a code chunk.
+-->
+
+
+In the **R** chunk below, we will load in a picture stored as `uw.png` in our main directory.  We then give it the caption of "UW logo", the label of "uwlogo", and specify that this is a figure.  Make note of the different **R** chunk options that are given in the R Markdown file (not shown in the knitted document).
+
+```{r uwlogo, fig.cap="UW logo"}
+include_graphics(path = "figure/uw.png")
+```
+
+Here is a reference to the UW logo: Figure \@ref(fig:uwlogo).  Note the use of the `fig:` code here.  By naming the **R** chunk that contains the figure, we can then reference that figure later as done in the first sentence here.  We can also specify the caption for the figure via the R chunk option `fig.cap`.
+
+\clearpage 
+
+<!-- starts a new page and stops trying to place floats such as tables and figures -->
+
+Below we will investigate how to save the output of an **R** plot and label it in a way similar to that done above.  Recall the `flights` dataset from Chapter \@ref(rmd-basics).  (Note that we've shown a different way to reference a section or chapter here.)  We will next explore a bar graph with the mean flight departure delays by airline from Portland for 2014.  Note also the use of the `scale` parameter which is discussed on the next page.
+
+```{r delaysboxplot, warnings=FALSE, messages=FALSE, fig.cap="Mean Delays by Airline", fig.width=6}
+flights %>% group_by(carrier) %>%
+  summarize(mean_dep_delay = mean(dep_delay)) %>%
+  ggplot(aes(x = carrier, y = mean_dep_delay)) +
+  geom_bar(position = "identity", stat = "identity", fill = "red")
+```
+
+Here is a reference to this image: Figure \@ref(fig:delaysboxplot).
+
+A table linking these carrier codes to airline names is available at <https://github.com/ismayc/pnwflights14/blob/master/data/airlines.csv>.
+
+\clearpage
+
+Next, we will explore the use of the `out.extra` chunk option, which can be used to shrink or expand an image loaded from a file by specifying `"scale= "`. Here we use the mathematical graph stored in the "subdivision.pdf" file.
+
+```{r subd, results="asis", echo=FALSE, fig.cap="Subdiv. graph", out.extra="scale=0.75"}
+include_graphics("figure/subdivision.pdf")
+```
+
+Here is a reference to this image: Figure \@ref(fig:subd).  Note that `echo=FALSE` is specified so that the **R** code is hidden in the document.
+
+**More Figure Stuff**
+
+Lastly, we will explore how to rotate and enlarge figures using the `out.extra` chunk option.  (Currently this only works in the PDF version of the book.)
+
+```{r subd2, results="asis", echo=FALSE, out.extra="angle=180, scale=1.1", fig.cap="A Larger Figure, Flipped Upside Down"}
+include_graphics("figure/subdivision.pdf")
+```
+
+As another example, here is a reference: Figure \@ref(fig:subd2).  
+
+## Footnotes and Endnotes
+
+You might want to footnote something. ^[footnote text] The footnote will be in a smaller font and placed appropriately. Endnotes work in much the same way. 
+
+## Bibliographies
+
+Of course you will need to cite things, and you will probably accumulate an armful of sources. There are a variety of tools available for creating a bibliography database (stored with the .bib extension).  In addition to BibTeX suggested below, you may want to consider using the free and easy-to-use tool called Zotero. Some Zotero documentation is at <http://libguides.reed.edu/citation/zotero>.  In addition, a tutorial is available from Middlebury College at <http://sites.middlebury.edu/zoteromiddlebury/>.
+
+_R Markdown_ uses _pandoc_ (<http://pandoc.org/>) to build its bibliographies.  One nice caveat of this is that you won't have to do a second compile to load in references as standard LaTeX requires. To cite references in your thesis (after creating your bibliography database), place the reference name inside square brackets and precede it by the "at" symbol.  For example, here's a reference to a book about worrying:  [@Molina1994].  This `Molina1994` entry appears in a file called `thesis.bib` in the `bib` folder.  This bibliography database file was created by a program called BibTeX.  You can call this file something else if you like (look at the YAML header in the main .Rmd file) and, by default, is to placed in the `bib` folder.  
+
+For more information about BibTeX and bibliographies, see (<http://web.reed.edu/cis/help/latex/index.html>)^[@reedweb2007]. There are three pages on this topic:  _bibtex_ (which talks about using BibTeX, at <http://web.reed.edu/cis/help/latex/bibtex.html>), _bibtexstyles_ (about how to find and use the bibliography style that best suits your needs, at <http://web.reed.edu/cis/help/latex/bibtexstyles.html>) and _bibman_ (which covers how to make and maintain a bibliography by hand, without BibTeX, at <http://web.reed.edu/cis/help/latex/bibman.html>). The last page will not be useful unless you have only a few sources.
+
+If you look at the YAML header at the top of the main .Rmd file you can see that we can specify the style of the bibliography by referencing the appropriate csl file.  You can download a variety of different style files at <https://www.zotero.org/styles>.  Make sure to download the file into the csl folder.
+
+**Tips for Bibliographies**
+
+- Like with thesis formatting, the sooner you start compiling your bibliography for something as large as thesis, the better. 
+- The cite key (a citation's label) needs to be unique from the other entries.
+- When you have more than one author or editor, you need to separate each author's name by the word "and" e.g. `Author = {Noble, Sam and Youngberg, Jessica},`.
+- Bibliographies made using BibTeX (whether manually or using a manager) accept LaTeX markup, so you can italicize and add symbols as necessary.
+- To force capitalization in an article title or where all lowercase is generally used, bracket the capital letter in curly braces.
+
+## Anything else?
+
+If you'd like to see examples of other things in this template, please [contact us](https://github.com/rapeek/aggiedown/issues/new) (email <rapeek@ucdavis.edu>) with your suggestions. We love to see people using _R Markdown_ for their theses, so we'll do our best to help. 
+
+
+<!--chapter:end:03-chap3.Rmd-->
+
+# Conclusion {-}
+
+If we don't want Conclusion to have a chapter number next to it, we can add the `{-}` attribute.
+
+**More info**
+
+And here's some other random info: the first paragraph after a chapter title or section head _shouldn't be_ indented, because indents are to tell the reader that you're starting a new paragraph. Since that's obvious after a chapter or section title, proper typesetting doesn't add an indent there.
+
+
+<!--chapter:end:04-conclusion.Rmd-->
+
+`r if(knitr:::is_latex_output()) '\\appendix'`
+
+`r if(!knitr:::is_latex_output()) '# (APPENDIX) Appendix {-}'` 
+
+<!--
+If you feel it necessary to include an appendix, it goes here.
+-->
+
+
+# The First Appendix
+
+This first appendix includes all of the R chunks of code that were hidden throughout the document (using the `include = FALSE` chunk tag) to help with readibility and/or setup.
+
+**In the main Rmd file**
+
+```{r ref.label='include_packages', results='hide', echo = TRUE}
+```
+
+**In Chapter \@ref(ref-labels):**
+
+```{r ref.label='include_packages_2', results='hide', echo = TRUE}
+```
+
+# The Second Appendix, for Fun
+
+<!--chapter:end:05-appendix.Rmd-->
+
+# Colophon {-}
+
+This document is set in [EB Garamond](https://github.com/georgd/EB-Garamond), [Source Code Pro](https://github.com/adobe-fonts/source-code-pro/) and [Lato](http://www.latofonts.com/lato-free-fonts/). The body text is set at 11pt with $\familydefault$. 
+
+It was written in R Markdown and $\LaTeX$, and rendered into PDF using [aggiedown](https://github.com/ryanpeek/aggiedown) and [bookdown](https://github.com/rstudio/bookdown). 
+
+This document was typeset using the XeTeX typesetting system, and the University of California Thesis class. Under the hood, the elements of the document formatting source code have been taken from the [Latex, Knitr, and RMarkdown templates for UC Berkeley's graduate thesis](https://github.com/stevenpollack/ucbthesis), and [Dissertate: a LaTeX dissertation template to support the production and typesetting of a PhD dissertation at Harvard, Princeton, and NYU](https://github.com/suchow/Dissertate)
+
+The source files for this thesis, along with all the data files, have been organised into an R package, xxx, which is available at https://github.com/xxx/xxx. A hard copy of the thesis can be found in the University of XXX library.
+
+This version of the thesis was generated on `r Sys.time()`. The repository is currently at this commit:
+
+```{r echo = FALSE, eval = FALSE}
+# I've set eval=FALSE to ensure Travis-CI can run
+# if you're not using Travis-CI, then eval=TRUE will be fine
+# library(git2r)
+# if ( git2r::in_repository() ) {
+#        summary(commits()[[1]]) 
+# } else { 
+#        message("We are not in a git repository") 
+# }
+```
+
+The computational environment that was used to generate this version is as follows:
+
+```{r echo = FALSE}
+devtools::session_info()
+```
+
+
+<!--chapter:end:98-colophon.Rmd-->
+
+<!--
+The bib chunk below must go last in this document according to how R Markdown renders.  More info is at http://rmarkdown.rstudio.com/authoring_bibliographies_and_citations.html
+-->
+
+\backmatter
+
+<!-- 
+If you'd like to change the name of the bibliography to something else,
+delete "References" and replace it.
+-->
+
+# References {-}
+<!--
+This manually sets the header for this unnumbered chapter.
+-->
+\markboth{References}{References}
+<!--
+To remove the indentation of the first entry.
+-->
+\noindent
+
+<!--
+To create a hanging indent and spacing between entries.  These three lines may need to be removed for styles that don't require the hanging indent.
+-->
+
+\setlength{\parindent}{-0.20in}
+\setlength{\leftskip}{0.20in}
+\setlength{\parskip}{8pt}
+
+
+<!--
+This is just for testing with more citations for the bibliography at the end.  Add other entries into the list here if you'd like them to appear in the bibliography even if they weren't explicitly cited in the document.
+-->
+
+---
+nocite: | 
+  @angel2000, @angel2001, @angel2002a
+...
+
+
+
+<!--chapter:end:99-references.Rmd-->
+

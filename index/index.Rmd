@@ -12,12 +12,45 @@ chair: "Andrew M. Latimer"
 signature1: "Malcolm P. North"
 signature2: "Constance I. Millar"
 abstract: |
-  Complex forest structure affects disturbances.
+  The long-term persistence of forest ecosystems hinges on their resilience to ongoing disturbance. Resilience-- the ability for a system to absorb disturbances and retain its essential identity and functions-- is closely tied to forest structure-- the size, species, and spatial distribution of trees on the landscape. Past and future disturbances are linked through their feedbacks with forest structure. I explore this link by measuring disturbance severity as well as local-scale forest structure at broad spatial extents in the yellow pine/mixed-conifer forest system of the Sierra Nevada, California. I bring new tools, such as massively parallel cloud-based GIS and drone remote sensing, to bear on questions about how forest structure affects wildfire and bark beetle disturbance in this region. 
+  I introduce a new framework to describe how wildfire suppression biases burning conditions and thus observed fire effects in large fire events to be more extreme than would be expected if all ignitions were allowed to burn. With this selection bias of large fires in mind, I generate a new dataset of fire effects in the Sierra yellow pine/mixed-conifer system that captures outcomes from smaller fire events. I use this new fire effects dataset and also measure variability in horizontal forest structure using the computer vision approach of texture analysis for nearly 1000 fires that burned in the system between 1984 and 2017. I find that greater variability in forest structure reduces the probability of high severity wildfire, which increases forest resilience in this system ill-adapted to recover from large high-severity events. Finally, I use drone-captured imagery and structure from motion (SfM) techniques to recreate complex forest structure of over 9 km^2^ of western pine beetle-attacked forest along a 350 km latitudinal gradient and a 1000 m elevation gradient. I found that availability of the host tree for the western pine beetle, ponderosa pine, increases the probability of ponderosa pine mortality and average host size plays a different role depending on the climatic water deficit (a proxy for tree moisture stress) at each site: at cool wet sites, more small hosts drive mortality; at hot dry sites, more large hosts drive mortality. 
+  Overall, this work demonstrates how an understanding the complexities of local forest structure, including the size, species, and spatial distribution of trees, can generate new insights into how broader-scale patterns of tree mortality arise during wildfire and bark beetle disturbance.
+  
+
+  
 acknowledgments: |
-  My acknowledgments
+  I want to start by acknowledging that all of this work took place on unceded territory of a number of Native American peoples including the Patwin, Ute, Nisenan, Washoe, Mono, Miwok, and Paiute. Their ongoing history is intimately tied to forest disturbances in the Sierra Nevada yellow pine/mixed-conifer and greatly contributes to what is considered the 'natural range of variation' for this system. Changes in disturbance regimes since Euroamerican invasion must therefore be considered within the context of settler colonialism, which dramatically shifted the Native American influence on these disturbance-prone landscapes. I am grateful for the opportunity to live and do science in these areas.
+  
+  I am very grateful for the many people that supported me during my Ph.D. There's a lot of overlap in the various ways that people have contributed to my experience in the Graduate Group in Ecology (GGE), which speaks to the diversity of talent represented by my colleagues.
+  
+  The best thing I did during my PhD was to join a pair of exceptional labs. The collegiality and immense talent of the Latimer and North labs kept me excited to pursue awesome science. I'm grateful to the Latimer Lab members with whom I overlapped: Jens Stevens, Derek Young, Brian Smithers, Allie Weill, Marina LaForgia, and Paige Kouba. I'm also grateful to the North Lab members with whom I overlapped: Mason Earles, Brian Smithers, Gabina Bohlmann, Jens Stevens, Jan Ng, Max Odland, and Paige Kouba. 
+  
+  Thank you to the administrative staff that helped me keep track of all the logistics associated with completing a PhD: Holly Hatfield Rogai, Elizabeth Sturdy, Matt Malepeai, and Lisa Brown. I don't know how I would have kept up with the various deadlines, paperwork, funding sources, etc. without your help.
+  
+  I acknowledge salary funding from the NSF GRFP, the Graduate Group in Ecology, and the Department of Plant Sciences. I also acknowledge the US Forest Service Western Wildlands Environmental Threat Assessment Center, who funded the drone research.
+  
+  Thanks to Leif Mortenson for taking me on my first tour of western pine beetle attacked forests as well as Chris Fettig for guiding my thinking on how this disturbance affects Sierra Nevada forests. Thanks to Brandon Collins for early conversations about yellow pine/mixed-conifer fire regimes and measuring forest structural heterogeneity.
+  
+  Thanks to the GLORIA Great Basin nonprofit for an amazing time in the mountains collecting important baseline data about alpine plant distributions. This is a long-term monitoring project and I hope to be volunteering with you all for the next 100 years. 
+  
+  Thanks to Dan Krofcheck, Alex Mandel, and Taylor Nelson for letting me bounce ideas off of you while I was building the drone project.
+  
+  Thanks to all the people that are coauthors on manuscripts I led during my PhD: Chhaya Werner, Steve Fick, Zack Steel, Leif Mortenson, Chis Fettig, Ruth Hufbauer, Brett Melbourne, Meagan Oldfather, Malcolm North, and Andrew Latimer.
+  
+  I learned a ton about teaching during my time at UC Davis in large part due to my participation with The Carpentries and the R-DAVIS class. I want to thank a series of folks that helped guide my learning about modern pedagogical approaches to teaching scientific computing skills including Noam Ross, Michael Levy, Myfanwy Johnston, Greg Wilson, Tracy Teal, Titus Brown, Emilio Laca, Ryan Peek, Taylor Reiter, Martha Wohlfeil, Michael Culshaw-Maurer, and Andrew Latimer. A special shoutout to Titus Brown for letting me co-run an R bootcamp during the Data Intensive Biology Summer Institute and Ryan Peek for inviting me to go all-in with him on building a scientific computing course in the GGE based on a shared motivation to lower the barrier to entry for using computers to help folks do ecology.
+  
+  Working with the Diversity Committee has been one of the greatest honors of my time in the GGE. Thank you to all of the amazing people on this committee that work hard to enact meaningful change that makes our ecology community more welcoming, inclusive, and equitable. 
+  
+  Thank you to my Guidance Committee and Qualifying Exam Committee members Rick Karban, Mark Schwartz, Connie Millar, Jenny Gremer, Robert Hijmans, and Sebastian Schreiber for helping to steer me on a good path from the get go.
+  
+  I am incredibly grateful to my advisors Andrew Latimer, Malcolm North, and Connie Millar for granting me the confidence, safety net, and flexibility to try new ideas with very uncertain outcomes to see where they may lead. I think my dissertation benefitted greatly from my feeling that I could take a "high risk/high reward" approach to pursuing science; I felt comfortable operating on steep learning curves because I knew I had good spotters.
+  
+  I thank my dog, Ouzel, for being a Very Good Pupper during my fieldwork and sometimes, but not always, alerting me when bears arrived in camp while we slept.
+  
+  Finally, I want to thank Meagan Oldfather for being a great visual observer for drone operations, an excellent fieldwork companion, and for making me want to be a better ecologist and person every day.
+  
 dedication: |
-  "*One thing to remember is to talk to the animals. If you do, they will talk back to you. But if you don’t talk to them, they won’t talk back to you, then you won’t understand. And when you don’t understand, you will fear, and when you fear, you will destroy the animals, and if you destroy the animals, you will destroy yourself*"    
-  (Chief Dan George, Tseil-Waututh Nation, North Vancouver)"
+  To my mom and dad.
 # End of UCD thesis fields
 knit: "bookdown::render_book"
 site: bookdown::bookdown_site
