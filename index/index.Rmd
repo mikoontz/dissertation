@@ -3,7 +3,7 @@
 title: "The effect of forest structure on yellow pine/mixed-conifer resilience to wildfire and bark beetle disturbance in the Sierra Nevada, California"
 author: "Michael J. Koontz"
 year: "2019"
-month: "April"
+month: "June"
 program: "ECOLOGY"
 uccampus: "DAVIS"
 report: "DISSERTATION"
