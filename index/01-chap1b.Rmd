@@ -5,7 +5,7 @@ Michael J. Koontz^1,2,\*^, Malcolm P. North^2,3^, Chhaya M. Werner^2,4^, Stephen
 
 ^1^Graduate Group in Ecology, University of California; Davis, CA  
 ^2^Department of Plant Sciences, University of California; Davis, CA  
-^3^Pacific Southwest Research Station, U.S.D.A. Forest Service; Davis, CA  
+^3^Pacific Southwest Research Station, U.S.D.A. Forest Service; Mammoth Lakes, CA  
 ^4^Center for Population Biology, University of California; Davis, CA  
 ^5^U.S. Geological Survey, Southwest Biological Science Center  
 ^6^Department of Ecology and Evolutionary Biology, University of Colorado; Boulder, CO  
@@ -22,9 +22,9 @@ library(captioner)
 library(tidyverse)
 library(pander)
 
-fig_nums_chap01 <- captioner(prefix = "Figure")
-table_nums_appendix <- captioner(prefix = "Table")
-eq_nums_chap01 <- captioner(prefix = "Equation")
+fig_nums_chap01 <- captioner(prefix = "Figure 1.", auto_space = FALSE)
+table_nums_appendix <- captioner(prefix = "Table 1.", auto_space = FALSE)
+eq_nums_chap01 <- captioner(prefix = "Equation 1.", auto_space = FALSE)
 ```
 
 ```{r source_analyses, results = "hide"}
@@ -236,16 +236,16 @@ severity_{i, j} &\sim Bern(\phi_{i,j}) \\
 logit(\phi_{i,j}) &= 
 \begin{aligned}
 & \beta_0 + \\
-& \beta_{\text{nbhd\_stdev\_NDVI}} * \text{nbhd\_stdev\_NDVI}_i + \\
-& \beta_{\text{prefire\_NDVI}} * \text{prefire\_NDVI}_i + \\
-& \beta_{\text{nbhd\_mean\_NDVI}} * \text{nbhd\_mean\_NDVI}_i + \\
+& \beta_{\text{nbhd\_sd\_NDVI}} * \text{nbhd\_sd\_NDVI}_i + \\
+& \beta_{\text{NDVI}} * \text{NDVI}_i + \\
+& \beta_{\text{nbhd\_mn\_NDVI}} * \text{nbhd\_mn\_NDVI}_i + \\
 & \beta_{\text{fm100}} * \text{fm100}_i + \\
 & \beta_{\text{pahl}} * \text{pahl}_i + \\
 & \beta_{\text{topographic\_roughness}} * \text{topographic\_roughness}_i + \\
-& \beta_{\text{nbhd\_stdev\_NDVI*fm100}} * \text{nbhd\_stdev\_NDVI}_i * \text{fm100}_i + \\
-& \beta_{\text{nbhd\_stdev\_NDVI*prefire\_NDVI}} * \text{nbhd\_stdev\_NDVI}_i * \text{prefire\_NDVI}_i + \\
-& \beta_{\text{nbhd\_stdev\_NDVI*nbhd\_mean\_NDVI}} * \text{nbhd\_stdev\_NDVI}_i * \text{nbhd\_mean\_NDVI}_i + \\
-& \beta_{\text{nbhd\_mean\_NDVI*prefire\_NDVI}} * \text{nbhd\_mean\_NDVI}_i * \text{prefire\_NDVI}_i + \\
+& \beta_{\text{nbhd\_sd\_NDVI*fm100}} * \text{nbhd\_sd\_NDVI}_i * \text{fm100}_i + \\
+& \beta_{\text{nbhd\_sd\_NDVI*NDVI}} * \text{nbhd\_sd\_NDVI}_i * \text{NDVI}_i + \\
+& \beta_{\text{nbhd\_sd\_NDVI*nbhd\_mn\_NDVI}} * \text{nbhd\_sd\_NDVI}_i * \text{nbhd\_mn\_NDVI}_i + \\
+& \beta_{\text{nbhd\_mn\_NDVI*NDVI}} * \text{nbhd\_mn\_NDVI}_i * \text{NDVI}_i + \\
 & \gamma_j
 \end{aligned}
 \\
@@ -259,7 +259,7 @@ Each neighborhood size (90m, 150m, 210m, 270m on a side) was substituted in turn
 We used `R` for all statistical analyses [@rcoreteam2018]. We used the `brms` package to fit mixed effects models in a Bayesian framework which implements the No U-Turn Sampler (NUTS) extension to the Hamiltonian Monte Carlo algorithm [@hoffman2014; @burkner2017]. We used 4 chains with 3000 samples per chain (1500 warmup samples and 1500 posterior samples) and chain convergence was assessed for each estimated parameter by ensuring Rhat values were less than or equal to 1.01 [@burkner2017].
 
 ### Data availability
-All data and analysis code are available via the Open Science Framework (DOI to be established) including a new dataset representing wildfire severity, vegetation characteristics, and regional climate conditions within the perimeters of 1,090 fires from the FRAP database that burned in yellow pine/mixed-conifer forest in the Sierra Nevada, California between 1984 and 2017. 
+All data and analysis code are available via the Open Science Framework (https://osf.io/27nsr/) including a new dataset representing wildfire severity, vegetation characteristics, and regional climate conditions within the perimeters of 1,090 fires from the FRAP database that burned in yellow pine/mixed-conifer forest in the Sierra Nevada, California between 1984 and 2017. 
 
 ## Acknowledgements
 We thank Connie Millar and Derek Young for valuable comments about this work and we also thank the community of Google Earth Engine developers for prompt and helpful insights about the platform. Funding was provided by NSF Graduate Research Fellowship Grant #DGE- 1321845 Amend. 3 (to MJK).

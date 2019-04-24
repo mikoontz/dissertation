@@ -1,5 +1,5 @@
 ```{r setup_appendix, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE, fig.pos="H")
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
 ```
 
 ```{r dependencies_appendix}
@@ -10,9 +10,9 @@ library(pander)
 library(tidyverse)
 library(captioner)
 
-eq_nums_appendix <- captioner(prefix = "Supplemental Equation")
-fig_nums_appendix <- captioner(prefix = "Supplemental Figure")
-table_nums_appendix <- captioner(prefix = "Supplemental Table")
+eq_nums_appendix <- captioner(prefix = "Supplemental Equation 4.", auto_space = FALSE)
+fig_nums_appendix <- captioner(prefix = "Supplemental Figure 4.", auto_space = FALSE)
+table_nums_appendix <- captioner(prefix = "Supplemental Table 4.", auto_space = FALSE)
 
 ci_betas_print_table <- read_csv("analyses_output/chap01/ci_betas_print_table.csv")
 ci_betas_print_table_simple <- read_csv("analyses_output/chap01/ci_betas_print_table_simple.csv")
@@ -95,7 +95,7 @@ eq_nums_appendix(name = "eq-potential-annual-heat-load")
 
 We used the digital elevation model to calculate the potential annual heat load (`r eq_nums_appendix(name = "eq-potential-annual-heat-load", display = "cite")` at each pixel, which is an integrated measure of latitude, slope, and a folding transformation of aspect about the northeast-southwest line, such that northeast becomes 0 radians and southwest becomes $\pi$ radians [@mccune2002; with correction in @mccune2007].
 
-(`r eq_nums_appendix(name = "eq-potential-annual-heat-load", display = "cite")`:
+`r eq_nums_appendix(name = "eq-potential-annual-heat-load", display = "cite")`:
 
 $\begin{aligned}
 \label{eq-potential-annual-heat-load}
@@ -120,10 +120,11 @@ table_nums_appendix(name = "table-cbi-models")
 ```{r cbi_models_table, echo = FALSE, include = TRUE, results = 'asis'}
 print_cbi_models <-
   print_cbi_models %>% 
+  dplyr::select(rank, response, interpolation, time_window, r2_kfold, a, b, c, low_sev, mod_sev, hi_sev) %>% 
   dplyr::rename(Rank = rank,
                 `Severity measure` = response,
                 `Time window` = time_window,
-                Interpolation = interpolation,
+                `Interp-\nolation` = interpolation,
                 `k-fold R^2^` = r2_kfold,
                 `$\\beta_0$` = a,
                 `$\\beta_1$` = b,
@@ -168,7 +169,7 @@ cat('\\pagebreak')
 fig_nums_appendix(name = "fig-image-acquisition-algorithm")
 ```
 
-![Schematic for how Landsat imagery was assembled in order to make comparisons between pre- and post-fire conditions. This schematic depicts a 64-day window of image collation prior to the fire which comprise the pre-fire image collection. A similar, 64-day window collection of imagery is assembled one year after the pre-fire image collection.](figure/chap01/image-acquisition-algorithm.pdf){ height=3in }
+![Schematic for how Landsat imagery was assembled in order to make comparisons between pre- and post-fire conditions. This schematic depicts a 64-day window of image collation prior to the fire which comprise the pre-fire image collection. A similar, 64-day window collection of imagery is assembled one year after the pre-fire image collection.](figure/chap01/image-acquisition-algorithm.pdf){ width=6in }
 
 ```{r, results='asis', eval=(opts_knit$get('rmarkdown.pandoc.to') == 'latex')}
 cat('\\pagebreak')
@@ -178,4 +179,4 @@ cat('\\pagebreak')
 fig_nums_appendix(name = "fig-decoupling-ndvi")
 ```
 
-![Conceptual diagram of 'decoupling' that sometimes occurs between the central pixel NDVI and the neighborhood mean NDVI. In each of these scenarios, our model results suggest that the probability that the central pixel burns at high severity is higher than expected given the additive effect of the covariates. The left panel depicts the \"hole in the forest\" decoupling, which occurs more frequently, and the right panel depicts the \"isolated patch\" decoupling.`](figure/chap01/decoupling-center-neighborhood-ndvi.png){ height=2in }
+![Conceptual diagram of 'decoupling' that sometimes occurs between the central pixel NDVI and the neighborhood mean NDVI. In each of these scenarios, our model results suggest that the probability that the central pixel burns at high severity is higher than expected given the additive effect of the covariates. The left panel depicts the \"hole in the forest\" decoupling, which occurs more frequently, and the right panel depicts the \"isolated patch\" decoupling.](figure/chap01/decoupling-center-neighborhood-ndvi.png){ width=6in }

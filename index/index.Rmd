@@ -1,5 +1,4 @@
 ---
-# UCD thesis fields
 title: "The effect of forest structure on yellow pine/mixed-conifer resilience to wildfire and bark beetle disturbance in the Sierra Nevada, California"
 author: "Michael J. Koontz"
 year: "2019"
@@ -21,7 +20,7 @@ acknowledgments: |
   
   I am very grateful for the many people that supported me during my Ph.D. There's a lot of overlap in the various ways that people have contributed to my experience in the Graduate Group in Ecology (GGE), which speaks to the diversity of talent represented by my colleagues.
   
-  The best thing I did during my PhD was to join a pair of exceptional labs. The collegiality and immense talent of the Latimer and North labs kept me excited to pursue awesome science. I'm grateful to the Latimer Lab members with whom I overlapped: Jens Stevens, Derek Young, Brian Smithers, Allie Weill, Marina LaForgia, and Paige Kouba. I'm also grateful to the North Lab members with whom I overlapped: Mason Earles, Brian Smithers, Gabina Bohlmann, Jens Stevens, Jan Ng, Max Odland, and Paige Kouba. 
+  The best thing I did during my PhD was to join a pair of exceptional labs. The collegiality and immense talent of the Latimer and North labs kept me excited to pursue awesome science. I'm grateful to the Latimer Lab members with whom I overlapped: Jens Stevens, Derek Young, Brian Smithers, Allie Weill, Marina LaForgia, and Paige Kouba. I'm also grateful to the North Lab members with whom I overlapped: Mason Earles, Brian Smithers, Gabina Bohlmann, Jens Stevens, Jan Ng, Max Odland, and Paige Kouba. Thanks also to the allied labs of the Latimer and North labs: the Safford Lab, the Jin Lab, the Gremer Lab, and the Young Lab.
   
   Thank you to the administrative staff that helped me keep track of all the logistics associated with completing a PhD: Holly Hatfield Rogai, Elizabeth Sturdy, Matt Malepeai, and Lisa Brown. I don't know how I would have kept up with the various deadlines, paperwork, funding sources, etc. without your help.
   
@@ -45,7 +44,7 @@ acknowledgments: |
   
   I thank my dog, Ouzel, for being a Very Good Pupper during my fieldwork and sometimes, but not always, alerting me when bears arrived in camp while we slept.
   
-  Finally, I want to thank Meagan Oldfather for being a great visual observer for drone operations, an excellent fieldwork companion, and for making me want to be a better ecologist and person every day.
+  Finally, I want to thank my favorite ecologist, Meagan Oldfather, for inspiring me to be a better ecologist and person every day.
   
 dedication: |
   To my mom and dad.
