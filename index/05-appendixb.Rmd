@@ -1,3 +1,7 @@
+# Appendix: Supplemental Information for 'Chapter 1: Remote sensing resistance'
+<!-- This adds a different "short title" -->
+\chaptermark{Supplementary information for Chapter 1}
+
 ```{r setup_appendix, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
 ```
@@ -45,9 +49,6 @@ eq_nums_appendix(name = "eq-nbr")
 eq_nums_appendix(name = "eq-nbr2")
 ```
 
-# Appendix: Supplemental Information for 'Chapter 1: Remote sensing resistance' {-}
-<!-- This adds a different "short title" -->
-\chaptermark{Supplementary information for Chapter 1}
 
 ## Supplemental methods
 Normalized difference vegetation index (NDVI; `r eq_nums_appendix(name = "eq-ndvi", display = "cite")`) correlates with vegetation density, canopy cover, and leaf area index [@rouse1973]. Normalized difference moisture index (NDMI; `r eq_nums_appendix(name = "eq-ndmi", display = "cite")`) correlates with similar vegetation characteristics as NDVI, but doesn't saturate at high levels of foliar biomass [@gao1996, @huesca2016]. Normalized burn ratio (NBR; `r eq_nums_appendix(name = "eq-nbr", display = "cite")`) and normalized burn ratio version 2 (NBR2; `r eq_nums_appendix(name = "eq-nbr2", display = "cite")`) respond strongly to fire effects on vegetation [@garcia1991; @key2006; @usgs2017a; @usgs2017; @hawbaker2017].

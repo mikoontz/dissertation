@@ -16,7 +16,7 @@ abstract: |
 
   
 acknowledgments: |
-  I want to start by acknowledging that all of this work took place on unceded territory of a number of Native American peoples including the Patwin, Ute, Nisenan, Washoe, Mono, Miwok, and Paiute. Their ongoing history is intimately tied to forest disturbances in the Sierra Nevada yellow pine/mixed-conifer and greatly contributes to what is considered the 'natural range of variation' for this system. Changes in disturbance regimes since Euroamerican invasion must therefore be considered within the context of settler colonialism, which dramatically shifted the Native American influence on these disturbance-prone landscapes. I am grateful for the opportunity to live and do science in these areas.
+  I will start by acknowledging that all of this work took place on unceded territory of a number of Native American peoples including the Patwin, Ute, Nisenan, Washoe, Mono, Miwok, and Paiute. Their ongoing history is intimately tied to forest disturbances in the Sierra Nevada yellow pine/mixed-conifer and greatly contributes to what is considered the 'natural range of variation' for this system. Changes in disturbance regimes since Euroamerican invasion must therefore be considered within the context of settler colonialism, which dramatically shifted the Native American influence on these disturbance-prone landscapes. I am grateful for the opportunity to live and do science in these areas.
   
   I am very grateful for the many people that supported me during my Ph.D. There's a lot of overlap in the various ways that people have contributed to my experience in the Graduate Group in Ecology (GGE), which speaks to the diversity of talent represented by my colleagues.
   
@@ -44,7 +44,7 @@ acknowledgments: |
   
   I thank my dog, Ouzel, for being a Very Good Pupper during my fieldwork and sometimes, but not always, alerting me when bears arrived in camp while we slept.
   
-  Finally, I want to thank my favorite ecologist, Meagan Oldfather, for inspiring me to be a better ecologist and person every day.
+  Finally, I want to thank my favorite ecologist, Meagan Oldfather, for inspiring me to be a better scientist and person every day.
   
 dedication: |
   To my mom and dad.
