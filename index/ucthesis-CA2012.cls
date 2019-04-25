@@ -120,8 +120,8 @@
   \def\ps@headings{
       \def\@oddfoot{\rm\hfil\thepage\hfil}
       \def\@evenfoot{\rm\hfil\thepage\hfil}     % Page numbers on ALL pages.
-      \def\@evenhead{\hfil\slshape\leftmark}%
-      \def\@oddhead{{\slshape\rightmark}\hfil}%
+      % \def\@evenhead{\hfil\slshape\leftmark}%
+      % \def\@oddhead{{\slshape\rightmark}\hfil}%
       \let\@mkboth\markboth
     \def\chaptermark##1{%
       \markboth {\MakeUppercase{%

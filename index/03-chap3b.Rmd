@@ -1,5 +1,5 @@
 # Initial wildfire suppression efforts select for more extreme fuel and climate burning conditions in Sierra Nevada forests
-\chaptermark{Selection by suppression}
+<!-- \chaptermark{Selection by suppression} -->
 Michael J. Koontz^1,2,\*^, Zachary L. Steel^3^, Andrew M. Latimer^1,2^, Malcolm P. North^1,2,4^
 
 ^1^Graduate Group in Ecology, University of California, Davis, CA, USA  

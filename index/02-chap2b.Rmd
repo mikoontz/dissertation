@@ -1,6 +1,6 @@
 # Differential response of a tree-killing bark beetle to forest structure across a gradient of climatic water deficit
 <!-- This adds a different "short title" -->
-\chaptermark{Local structure; western pine beetle severity}
+<!-- \chaptermark{Local structure; western pine beetle severity} -->
 Michael J. Koontz^1,2,\*^, Andrew M. Latimer^1,2^, Leif A. Mortenson^3^, Christopher J. Fettig^3^, Malcolm P. North^1,2,4^
 
 ^1^Graduate Group in Ecology, University of California, Davis, CA, USA  

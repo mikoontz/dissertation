@@ -1,6 +1,6 @@
 # Local variability of vegetation structure increases forest resilience to wildfire
 <!-- This adds a different "short title" -->
-\chaptermark{Remote sensing resistance}
+<!-- \chaptermark{Remote sensing resistance} -->
 Michael J. Koontz^1,2,\*^, Malcolm P. North^2,3^, Chhaya M. Werner^2,4^, Stephen E. Fick^5,6^, Andrew M. Latimer^2^
 
 ^1^Graduate Group in Ecology, University of California; Davis, CA  
